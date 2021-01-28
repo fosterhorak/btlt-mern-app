@@ -8,7 +8,7 @@ export default function ExerciseListCard({ exercise }) {
     <>
         <div className="exercise-card">
             <h1>{exercise.name}</h1> 
-            <h3>Category: {exercise.category} | Log Type: {exercise.logType}</h3>
+            <p className="p">Category: {exercise.category} | Log Type: {exercise.logType}</p>
         </div>
 
         {/*<div className='TrollListItem panel panel-default'>

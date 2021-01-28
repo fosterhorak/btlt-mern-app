@@ -1,0 +1,53 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+  
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+  
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+}
+  
+ 
+  
+.exercise-card {
+    border: 1px solid var(--blue);
+    border-radius: 2vmin;
+    background-color: var(--medium-background);
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    margin: 2vmin 2vmin;
+}
+
+.exercise-card:hover {
+    border: 1px solid var(--red);
+
+}
+
+h1 {
+    margin:1px;
+    font-size: 3vh;
+}
+
+.p {
+    color: var(--blue);
+    font-size: 2vh;
+
+}

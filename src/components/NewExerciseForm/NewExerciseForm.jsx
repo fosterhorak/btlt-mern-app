@@ -99,7 +99,7 @@ export default function NewExerciseForm(props) {
             <div className="form-groupR">
                 <select 
                     className="form-control" 
-                    name="category"
+                    name="logType"
                     value={formData.logType}
                     onChange={handleChange}
                     required>
