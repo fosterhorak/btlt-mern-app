@@ -35,7 +35,7 @@ export default function NewExerciseForm(props) {
             <h1>Add A New Exercise</h1> 
             <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
             
-            <div className="form-group">
+            <div className="form-groupL">
                 <label> <strong>Exercise Name</strong> </label>
             </div>
 

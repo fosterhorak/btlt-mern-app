@@ -75,7 +75,8 @@ button.form-btn {
 }
 
 label {
-
+    margin: auto;
+    padding: 0;
 }
 
 input {
@@ -106,6 +107,8 @@ option {
 p {
     text-align: left;
     color: var(--medium-text);
+    margin: 4px;
+    padding: 2px;
 }
 
 textarea {
