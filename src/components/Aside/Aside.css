@@ -1,0 +1,56 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+}
+
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vmin 2vmin;
+    color: var(--light-text);
+    max-width: 170px;
+}
+
+button {
+    width: 100%;
+    margin: 2vmin 0.5vmin;
+    font-size: 15px;
+    background-color: var(--medium-background);
+    border: 2px solid var(--light-background);
+    padding: 2vmin;
+    
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+.logout {
+    background-color: var(--red);
+}
+
+Link.active {
+    background-color: var(--light-background);
+    color: var(--dark-text);
+}

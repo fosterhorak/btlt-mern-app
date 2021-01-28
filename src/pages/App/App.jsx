@@ -5,7 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 //import NewOrderPage from '../NewOrderPage/NewOrderPage';
 //import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import NavBar from '../../components/NavBar/NavBar';
+//import NavBar from '../../components/NavBar/NavBar';
 import Aside from '../../components/Aside/Aside';
 import ExerciseLogListPanel from '../../components/ExerciseLogListPanel/ExerciseLogListPanel';
 import ExerciseLogDetailPanel from '../../components/ExerciseLogDetailPanel/ExerciseLogDetailPanel';
@@ -21,19 +21,23 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <main className="App">
+    <div className="App">
       { user ?
           <>
-            <NavBar user={user} setUser={setUser} />
-            <Aside />
+            <main>
+            <Aside user={user} setUser={setUser} />
             <Switch>
               <Route exact path="/">
+                <div className="list-and-detail">
                 <ExerciseLogListPanel />
                 <ExerciseLogDetailPanel />
+                </div>
               </Route>
               <Route path="/exercises">
+                <div className="list-and-detail">
                 <ExerciseListPanel />
                 <ExerciseDetailPanel />
+                </div>
               </Route>
               <Route exact path="/new-log">
                 <NewLogForm />
@@ -43,6 +47,7 @@ export default function App() {
               </Route>
               <Redirect to="/"/>
             </Switch>
+            </main>
           </>
         :
           <>
@@ -50,6 +55,6 @@ export default function App() {
           <AuthPage setUser={setUser}/>
           </>
       }
-    </main>
+    </div>
   );
 }

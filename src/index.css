@@ -1,13 +1,35 @@
 :root {
   --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
-  --text-light: #968c84;
-  --text-dark: #615954;
+  --gray-1: #b8b8b8;
+  --gray-2: #757575;
+  --gray-3: #4e4e4e;
+  --black-background: #000000;
+  --contrast-button: #7c120a;
+  --text-light: #949494;
+  --text-dark: #414141;
+
+  --dark-background: rgb(20, 20, 20);
+  --medium-background: rgb(30, 30, 30);
+  --light-background: rgb(40, 40, 40);
+  
+  --light-gray: rgb(60, 60, 60);
+  --dark-gray: rgb(46, 46, 46);
+  --light-blue: rgb(121,212,255);
+  --red: rgb(235,33,0);
+  --blue: rgb(47,118,238);
+  --bold-orange: rgb(237, 77, 38);
+  --pale-orange: rgb(225, 179, 114);
+  --muted-orange: rgb(205, 122, 96);
+
+  --bold-yellow: rgb(245, 192, 0);
+  --bold-green:rgb(89, 172, 30);
+
+  --white-text:  rgb(255, 255, 255);
+  --light-text:  rgb(183, 183, 183);
+  --medium-text:  rgb(150, 150, 150);
+  --dark-text:  rgb(80, 80, 80);
 }
+
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -20,10 +42,11 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--medium-background);
   padding: 2vmin;
   height: 100vh;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -68,9 +91,9 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
+  background-color: var(--gray-1);
   color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid var(--gray-3);
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
@@ -79,13 +102,13 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: var(--light-background);
+  border: .1vmin solid var(--dark-background);
   border-radius: 1vmin;
 }
 
 p.error-message {
-  color: var(--orange);
+  color: var(--red);
   text-align: center;
 }
 
@@ -93,11 +116,11 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: var(--light-text);
 }
 
 label {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
   display: flex;
   align-items: center;
 }
@@ -105,27 +128,28 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid var(--gray-3);
   border-radius: .5vmin;
-  color: var(--text-dark);
+  color: var(--white-text);
+  background-color: var(--medium-background);
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--red);
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--red);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid var(--medium-background);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -143,10 +167,40 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--light-background);
+  color: var(--dark-text);
+  border-color: var(--light-background);
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+  background-color: var(--red);
+}
+
+
+
+
+.list-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vmin 2vmin;
+}
+
+.detail-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vmin 2vmin;
+}
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vmin 2vmin;
 }
