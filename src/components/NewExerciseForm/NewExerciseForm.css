@@ -1,0 +1,127 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+  
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+  
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+  }
+
+h1 {
+
+}
+.new-form {
+
+}
+
+div.popup {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+    padding: 2vmin;
+    border-radius: 3vmin;
+    color: var(--white-text);
+    border: 2px solid var(--light-text);
+}
+h2 {
+    margin: auto;
+}
+li {
+    padding: 5px;
+}
+
+button.popup-btn {
+    width: 50%;
+    padding: 2px;
+    color: var(--medium-text);
+
+}
+small.close-popup-msg {
+    align-self: center;
+}
+form {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1.25vmin;
+    color: var(--light-text);
+
+
+}
+
+.form-groupL {
+
+}
+.form-groupR {
+
+}
+
+button.form-btn {
+    justify-self: center;
+    margin-bottom: 18px;
+}
+
+label {
+
+}
+
+input {
+    width: 80%;
+    min-height: 40px;
+    font-size: 3vmin;
+    color: var(--blue);
+}
+
+select{
+    background-color: var(--medium-background);
+    color: var(--blue);
+    width: 80%;
+    min-height: 40px;
+    font-size: 3vmin;
+    border-radius: .5vmin;
+
+
+}
+select:focus {
+    border-color: var(--red);
+}
+
+option {
+    color: var(--blue);
+}
+
+p {
+    text-align: left;
+    color: var(--medium-text);
+}
+
+textarea {
+    background-color: var(--medium-background);
+    color: var(--blue);
+    width: 80%;
+    min-height: 40px;
+    font-size: 2vmin;
+    border-radius: .5vmin;
+
+    
+}
+textarea:focus {
+    border-color: var(--red);
+}
+
+button {
+
+}

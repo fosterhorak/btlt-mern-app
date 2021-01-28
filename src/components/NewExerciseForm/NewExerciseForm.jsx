@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
-
+import './NewExerciseForm.css';
+import Popup from 'reactjs-popup';
 
 export default function NewExerciseForm(props) {
     const [invalidForm, setInvalidForm] = useState(true);
@@ -10,7 +11,7 @@ export default function NewExerciseForm(props) {
         description: '',
         demoLink: '', 
     })
-
+    
     const formRef = useRef();
 
     useEffect(() => {
@@ -31,11 +32,14 @@ export default function NewExerciseForm(props) {
 
     return (
         <div className="new-form">
-            <h1>Add a New Exercise</h1> 
+            <h1>Add A New Exercise</h1> 
             <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
             
             <div className="form-group">
-                <label>Exercise Name</label>
+                <label> <strong>Exercise Name</strong> </label>
+            </div>
+
+            <div className="form-groupR">
                 <input
                     className="form-control"
                     name="name"
@@ -45,8 +49,10 @@ export default function NewExerciseForm(props) {
                 />
             </div>
 
-            <div className="form-group">
-                <label>Category</label>
+            <div className="form-groupL">
+                <label><strong>Category</strong> </label>
+            </div>
+            <div className="form-groupR">
                 <select 
                     className="form-control" 
                     name="category"
@@ -64,8 +70,33 @@ export default function NewExerciseForm(props) {
                 </select>
             </div>
 
-            <div className="form-group">
-                <label>Log Type</label>
+            <div className="form-groupL">
+                <label><strong>Log Type</strong></label>
+                <p>Different "Log Types" will track different metrics.</p> 
+                <Popup 
+                    trigger={<button className="popup-btn">click for details</button>} 
+                    position="right center"
+                    closeOnDocumentClick>
+                    <div className="popup">
+                        <h2>Metrics tracked for each Log Type are shown below...</h2> 
+                        <ul>
+                            <li><strong>Std Lft:</strong>   weight, reps, sets, rest interval (optional), *calculates volume</li>
+                            <li><strong> Body Wt:</strong>   reps, sets, rest interval (optional), *calculates volume</li>
+                            <li><strong> EMOM(std):</strong>   time, number of rounds, reps per round, *calculates volume</li>
+                            <li><strong> EMOM(wtd):</strong>   weight, time, number of rounds, reps per round, *calculates volume</li>
+                            <li><strong> AMRAP(std):</strong>   time cap, number of reps</li>
+                            <li><strong> AMRAP(wtd):</strong>   weight, time cap, number of rep</li>
+                            <li><strong> RepsForTime(std):</strong>   number of reps, time</li>
+                            <li><strong> RepsForTime(wtd):</strong>   weight, number of reps, time</li>
+                            <li><strong> Cardio:</strong>  distance,  time, avg speed</li>
+                            <li><strong> Simple:</strong>   completed(y/n)</li>
+                        </ul>
+                        <small className="close-popup-msg">[click away to close pop-up]</small>
+                    </div>
+                </Popup>                    
+            </div>
+
+            <div className="form-groupR">
                 <select 
                     className="form-control" 
                     name="category"
@@ -83,11 +114,14 @@ export default function NewExerciseForm(props) {
                     <option value="Cardio">Cardio</option>
                     <option value="Simple">Simple</option>
                 </select>
-                <p>*Make sure to add a note that explains what these are (pop up?)*</p>
             </div>
-            <div className="form-group">
-                <label>Description</label>
-                <p>Describe the workout in detail, so you can make sure you perform it the same way every time!</p>
+
+            <div className="form-groupL">
+                <label><strong>Description</strong> </label>
+                <p>We recommend you add a description of your new exercise for reference (if need it in the future). This will also ensure you complete the exercise the same way every time.</p>
+
+            </div>
+            <div className="form-groupR">
                 <textarea 
                     className="form-control"
                     name="description"  
@@ -96,14 +130,17 @@ export default function NewExerciseForm(props) {
                     required
                     type="text" 
                     cols="30" 
-                    rows="10">
+                    rows="9">
                 </textarea>
             </div>
 
-            <div className="form-group">
-                <label>Demo URL</label>
+            <div className="form-groupL">
+                <label><strong>Demo URL</strong> </label>
                 <p>If you'd like to, include a link to a website/video demo of how to perform this exercise.</p>
 
+            </div>
+
+            <div className="form-groupR">   
                 <input
                     className="form-control"
                     name="demoLink"
@@ -111,7 +148,13 @@ export default function NewExerciseForm(props) {
                     onChange={handleChange}
                 />
             </div>
-
+            <button
+                className="form-btn"
+                type="submit"
+                disabled={invalidForm}
+                >
+                ADD EXERCISE
+            </button>
 
             </form>
         </div>
