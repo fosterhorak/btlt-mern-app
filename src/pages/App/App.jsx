@@ -98,7 +98,7 @@ export default function App() {
               </Route>
               <Route path="/exercises">
                 <div className="list-and-detail">
-                <ExerciseListPanel />
+                <ExerciseListPanel exercises={exercises} setExercises={setExercises}/>
                 <ExerciseDetailPanel />
                 </div>
               </Route>
