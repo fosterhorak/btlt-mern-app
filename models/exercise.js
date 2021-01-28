@@ -5,12 +5,12 @@ const exerciseSchema = new Schema({
     name: {type: String, required: true}, //user input
     category: { type: String, 
                 enum: [ 'Weights',   //user will select
-                        'Kettlebell', 
+                        'Kettlebells', 
                         'Body Weight', 
                         'Mixed', 
                         'Cardio', 
                         'Interval', 
-                        'Stretching', 
+                        'Stretching/Mobility', 
                         'Other'] 
     }, 
     logType: {  type: String, 
@@ -18,7 +18,7 @@ const exerciseSchema = new Schema({
                         'Body Wt', 
                         'EMOM(std)', 
                         'EMOM(wtd)', 
-                        'AMRAP(wtd)', 
+                        'AMRAP(std)', 
                         'AMRAP(wtd)', 
                         'RepsForTime(std)',
                         'RepsForTime(wtd)', 

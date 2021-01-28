@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-//import NewOrderPage from '../NewOrderPage/NewOrderPage';
-//import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-//import NavBar from '../../components/NavBar/NavBar';
 import Aside from '../../components/Aside/Aside';
 import ExerciseLogListPanel from '../../components/ExerciseLogListPanel/ExerciseLogListPanel';
 import ExerciseLogDetailPanel from '../../components/ExerciseLogDetailPanel/ExerciseLogDetailPanel';
@@ -15,10 +12,76 @@ import NewLogForm from '../../components/NewLogForm/NewLogForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 import VisitorHeader from '../../components/VisitorHeader/VisitorHeader';
 
+import * as exerciseAPI from '../../utilities/exercises-api';
+import * as logAPI from '../../utilities/logs-api';
+
 
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [exercises, setExercises] = useState([]);
+  const [logs, setLogs] = useState([]);
+
+  const history = useHistory();
+
+  useEffect(() => {
+    history.push("/")
+  }, [exercises, logs, history])
+
+  // ----------- FUNCTIONS FOR EXERCISES --------------------
+  useEffect(() => {
+    async function getExercises(){
+      const exercises = await exerciseAPI.getAll();
+      setExercises(exercises);
+    }
+    getExercises();
+  }, [])
+
+  async function handleAddExercise(newExerciseData) {
+    const newExercise = await exerciseAPI.create(newExerciseData);
+    setExercises([...exercises, newExercise]);
+  }
+
+  // async function handleUpdateExercise(updatedExerciseData) {
+  //   const updatedExercise = await exerciseAPI.update(updatedExerciseData);
+  //   const newExerciseArray = exercises.map(exercise =>
+  //     exercise._id === updatedExercise._id ? updatedExercise : exercise
+  //   );
+  //   setExercises(newExerciseArray);
+  // }
+
+  // async function handleDeleteExercise(exerciseID) {
+  //   await exerciseAPI.deleteOne(exerciseID);
+  //   setExercises(exercises.filter(exercise => exercise._id !== exerciseID));
+  // }
+
+  // ----------- FUNCTIONS FOR LOGS --------------------
+  // useEffect(() => {
+  //   async function getLogs(){
+  //     const logs = await logAPI.getAll();
+  //     setLogs(logs);
+  //   }
+  //   getLogs();
+  // }, [])
+
+  // async function handleAddLog(newLogData) {
+  //   const newLog = await logAPI.create(newLogData);
+  //   setLogs([...logs, newLog]);
+  // }
+
+  // async function handleUpdateLog(updatedLogData) {
+  //   const updatedLog = await logAPI.update(updatedLogData);
+  //   const newLogArray = logs.map(log =>
+  //     log._id === updatedLog._id ? updatedLog : log
+  //   );
+  //   setLogs(newLogArray);
+  // }
+
+  // async function handleDeleteLog(logID) {
+  //   await logAPI.deleteOne(logID);
+  //   setLogs(logs.filter(log => log._id !== logID));
+  // }
+
 
   return (
     <div className="App">
@@ -43,7 +106,7 @@ export default function App() {
                 <NewLogForm />
               </Route>
               <Route exact path="/new-exercise">
-                <NewExerciseForm />
+                <NewExerciseForm exercises={exercises} setExercises={setExercises} handleAddExercise={handleAddExercise}/>
               </Route>
               <Redirect to="/"/>
             </Switch>
