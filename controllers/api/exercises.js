@@ -1,4 +1,5 @@
 const Exercise = require('../../models/exercise');
+const User = require('../../models/user');
 
 module.exports = {
     index,
@@ -16,6 +17,8 @@ async function index(req, res) {
 
 async function create(req, res) {
     const exercise = await Exercise.create(req.body);
+    console.log(exercise);
+
     res.status(201).json(exercise);
 }
 

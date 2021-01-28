@@ -6,10 +6,11 @@ export default function NewExerciseForm(props) {
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
-        category: 'Weights', 
-        logType: 'Std Lft',
+        category: '', 
+        logType: '',
         description: '',
         demoLink: '', 
+        creatorID: `${props.user._id}`,
     })
     
     const formRef = useRef();

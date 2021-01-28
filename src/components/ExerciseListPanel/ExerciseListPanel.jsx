@@ -18,7 +18,12 @@ export default function ExerciseListPanel(props) {
             
             <div className="exercise-list-scroll">
               {props.exercises.map(exercise =>
-              <ExerciseListCard exercise={exercise} key={exercise._id}/>
+              <ExerciseListCard 
+                exercise={exercise} 
+                key={exercise._id} 
+                activeExercise={props.activeExercise} 
+                setActiveExercise={props.setActiveExercise}
+              />
               )}
             </div>
           
@@ -28,3 +33,4 @@ export default function ExerciseListPanel(props) {
       </>
     );
   }
+

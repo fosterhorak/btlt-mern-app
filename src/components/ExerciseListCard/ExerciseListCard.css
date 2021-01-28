@@ -51,3 +51,9 @@ h1 {
     font-size: 2vh;
 
 }
+
+div.selected {
+    background-color: var(--light-background);
+    border: 1px solid var(--pale-orange);
+
+}

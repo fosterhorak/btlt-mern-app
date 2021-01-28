@@ -20,7 +20,9 @@ import * as logAPI from '../../utilities/logs-api';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [exercises, setExercises] = useState([]);
+  const [activeExercise, setActiveExercise] = useState({});
   const [logs, setLogs] = useState([]);
+
 
   const history = useHistory();
 
@@ -98,15 +100,15 @@ export default function App() {
               </Route>
               <Route path="/exercises">
                 <div className="list-and-detail">
-                <ExerciseListPanel exercises={exercises} setExercises={setExercises}/>
-                <ExerciseDetailPanel />
+                <ExerciseListPanel exercises={exercises} setExercises={setExercises} activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
+                <ExerciseDetailPanel activeExercise={activeExercise}  />
                 </div>
               </Route>
               <Route exact path="/new-log">
                 <NewLogForm />
               </Route>
               <Route exact path="/new-exercise">
-                <NewExerciseForm exercises={exercises} setExercises={setExercises} handleAddExercise={handleAddExercise}/>
+                <NewExerciseForm exercises={exercises} user={user} setExercises={setExercises} handleAddExercise={handleAddExercise}/>
               </Route>
               <Redirect to="/"/>
             </Switch>
