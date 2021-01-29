@@ -42,13 +42,15 @@
 }
 
 h1 {
-    margin:1px;
+    margin-top:.5vmin;
+    margin-bottom: 0px;
     font-size: 2vh;
 }
 
-.p {
+.b {
     color: var(--blue);
-    font-size: 2vh;
+    font-size: 1.5vh;
+    margin:0px .3vmin .3vmin .3vmin;
 
 }
 

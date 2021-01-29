@@ -10,7 +10,6 @@ import ExerciseListPanel from '../../components/ExerciseListPanel/ExerciseListPa
 import ExerciseDetailPanel from '../../components/ExerciseDetailPanel/ExerciseDetailPanel';
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
-import VisitorHeader from '../../components/VisitorHeader/VisitorHeader';
 
 import * as exerciseAPI from '../../utilities/exercises-api';
 import * as logAPI from '../../utilities/logs-api';
@@ -22,7 +21,6 @@ export default function App() {
   
   const [exercises, setExercises] = useState([]);
   const [activeExercise, setActiveExercise] = useState({});
-  const [exerciseLogs, setExerciseLogs] = useState([]);
 
   
   // const [logs, setLogs] = useState([]);
@@ -123,7 +121,6 @@ export default function App() {
           </>
         :
           <>
-          <VisitorHeader />
           <AuthPage setUser={setUser}/>
           </>
       }

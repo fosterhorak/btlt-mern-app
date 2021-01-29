@@ -197,8 +197,8 @@ p {
 }
 
 .exercise-update-popup {
-    height: 90vh;
-    width: 90vw;
     background-color: var(--dark-background);
-    border: 3px solid var(--red);
+    margin-bottom: -5px;
+    padding: 5px;
+
 }

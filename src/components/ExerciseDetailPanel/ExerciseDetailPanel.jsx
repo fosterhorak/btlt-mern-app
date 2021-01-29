@@ -62,7 +62,8 @@ export default function ExerciseDetailPanel({activeExercise, exercises, handleUp
               <Popup 
                 trigger={<button id="u" className="ud-btns">UPDATE</button>} 
                 position="center center"
-                closeOnDocumentClick>
+                arrow="false"
+                closeOnClick>
                 <div className="exercise-update-popup">
                   <EditExerciseForm exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
                 </div>

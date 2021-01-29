@@ -2,10 +2,11 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import './EditExerciseForm.css';
 import Popup from 'reactjs-popup';
+import { set } from 'mongoose';
 
 
 
-export default function EditExerciseForm({ activeExercise, handleUpdateExercise}) {
+export default function EditExerciseForm({ activeExercise, handleUpdateExercise, setOpen }) {
     const location = useLocation();
 
     const [invalidForm, setInvalidForm] = useState(true);
@@ -35,6 +36,11 @@ export default function EditExerciseForm({ activeExercise, handleUpdateExercise}
             ...formData,
             [e.target.name]: e.target.value
         })
+    }
+
+    const handleCancel = (e) => {
+        e.preventDefault()
+        Popup.open=false;
     }
 
     // ice box: allow update of all form components if no logs have been created yet... otherwise only allow select properties to be updated
@@ -152,7 +158,7 @@ export default function EditExerciseForm({ activeExercise, handleUpdateExercise}
 
             </form>
             </div>
-            <Link to='/exercises'> <h5>CANCEL</h5></Link>
+            <Link onClick={handleCancel}> <h5>CANCEL</h5></Link>
         </div>
     );
 }
