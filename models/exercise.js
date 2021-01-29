@@ -37,10 +37,4 @@ const exerciseSchema = new Schema({
 });
 
 
-exerciseSchema.statics.getUserExercises = async function (userId) {
-    return this.find(
-        {creator: userId},  
-    );
-};
-
 module.exports = mongoose.model('Exercise', exerciseSchema);

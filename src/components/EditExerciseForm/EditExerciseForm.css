@@ -1,0 +1,148 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+  
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+  
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+  }
+
+h1.update-form {
+    font-size: 4vmin;
+    color: var(--light-text);
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.new-form {
+    background-color: var(--light-background);
+    width: 50vw;
+    height: 85vh;
+    border-radius: 5vmin;
+    border: 3px solid var(--blue);
+    padding: 2vmin 4vmin;
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+form.update-form {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 1.25vmin;
+    color: var(--light-text);
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+.form-groupL {
+
+}
+.form-groupR {
+    color: var(--blue);
+}
+
+button.form-btn {
+    justify-self: center;
+    width: 90%;
+    height: 6vh;
+    font-size: 4vh;
+    padding: 0px;
+    margin-top: 3px;
+}
+h5 {
+    justify-self: center;
+    margin: 3px;
+    width: 100%;
+    font-size: 3vmin;
+    text-decoration: none;
+}
+
+label {
+    margin: auto;
+    padding: 0;
+    font-size: 3vmin;
+    
+}
+
+p.update-exercise {
+    margin: auto;
+    padding: 0;
+    font-size: 2vmin;   
+}
+
+input#ee {
+    width: 100%;
+    min-height: 40px;
+    font-size: 3vmin;
+    color: var(--blue);
+    margin: 0px;
+}
+
+select#ee{
+    background-color: var(--medium-background);
+    color: var(--blue);
+    width: 100%;
+    min-height: 40px;
+    font-size: 3vmin;
+    border-radius: .5vmin;
+
+
+}
+select#ee:focus {
+    border-color: var(--red);
+}
+
+option {
+    color: var(--blue);
+}
+
+p {
+    text-align: left;
+    color: var(--medium-text);
+    margin: 4px;
+    padding: 2px;
+}
+
+textarea#ee {
+    background-color: var(--medium-background);
+    color: var(--blue);
+    width: 100%;
+    min-height: 40px;
+    font-size: 2vmin;
+    border-radius: .5vmin;
+
+    
+}
+textarea#ee:focus {
+    outline-color: var(--red);
+    border-color: var(--red);
+    border: 1px solid var(--red);
+
+
+}
+
+button {
+
+}
+
+.scrollable {
+    overflow-y: scroll;
+    height: 80vh;
+}

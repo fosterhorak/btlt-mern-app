@@ -6,7 +6,7 @@ const exercisesCtrl = require('../../controllers/api/exercises');
 router.get('/', exercisesCtrl.index);
 router.post('/', exercisesCtrl.create);
 // router.get('/:id', exercisesCtrl.show);
-// router.put('/:id', exercisesCtrl.update);
+router.put('/:id', exercisesCtrl.update);
 // router.delete('/:id', exercisesCtrl.delete);
 
 

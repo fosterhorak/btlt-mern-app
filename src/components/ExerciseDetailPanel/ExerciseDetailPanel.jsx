@@ -1,6 +1,8 @@
-
 import './ExerciseDetailPanel.css';
-export default function ExerciseDetailPanel({activeExercise}) {
+import Popup from 'reactjs-popup';
+import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
+
+export default function ExerciseDetailPanel({activeExercise, exercises, handleUpdateExercise}) {
 
   // ** i want to either: not show anything in the detail panel until i click an exercise...
   // OR 
@@ -57,7 +59,15 @@ export default function ExerciseDetailPanel({activeExercise}) {
               </div>
             </div>
             <div className="update-delete-btn-container">
-              <button id="u" className="ud-btns">UPDATE</button>
+              <Popup 
+                trigger={<button id="u" className="ud-btns">UPDATE</button>} 
+                position="center center"
+                closeOnDocumentClick>
+                <div className="exercise-update-popup">
+                  <EditExerciseForm exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
+                </div>
+              </Popup>  
+
               <button id="d"className="ud-btns">DELETE</button>
             </div>
             </div>

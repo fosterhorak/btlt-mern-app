@@ -195,3 +195,10 @@ p {
     max-height: 410px;
     border-radius: 2vmin;
 }
+
+.exercise-update-popup {
+    height: 90vh;
+    width: 90vw;
+    background-color: var(--dark-background);
+    border: 3px solid var(--red);
+}

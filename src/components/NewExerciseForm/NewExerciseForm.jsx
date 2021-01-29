@@ -10,8 +10,8 @@ export default function NewExerciseForm(props) {
         logType: 'Std Lft',
         description: '',
         demoLink: '', 
-        creatorEmail: `${props.user.email}`,
-        creator: `${props.user._id}`,
+        // creatorEmail: `${props.user.email}`,
+        // creator: `${props.user._id}`,
     })
     
     const formRef = useRef();
@@ -67,7 +67,7 @@ export default function NewExerciseForm(props) {
                     <option value="Mixed">Mixed</option>
                     <option value="Cardio">Cardio</option>
                     <option value="Interval">Interval</option>
-                    <option value="Stetching/Mobility">Stetching/Mobility</option>
+                    <option value="Stretching/Mobility">Stretching/Mobility</option>
                     <option value="Other">Other</option>
                 </select>
             </div>
@@ -138,7 +138,7 @@ export default function NewExerciseForm(props) {
 
             <div className="form-groupL">
                 <label><strong>Demo URL</strong> </label>
-                <p>If you'd like to, include a link to a website/video demo of how to perform this exercise.</p>
+                <p>Feel free to add a link to a website/video for this exercise.</p>
 
             </div>
 

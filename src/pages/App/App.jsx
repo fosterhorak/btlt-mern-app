@@ -19,16 +19,23 @@ import * as logAPI from '../../utilities/logs-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  
   const [exercises, setExercises] = useState([]);
   const [activeExercise, setActiveExercise] = useState({});
-  const [logs, setLogs] = useState([]);
+  const [exerciseLogs, setExerciseLogs] = useState([]);
+
+  
+  // const [logs, setLogs] = useState([]);
+  // const [activeLog, setActiveLog] = useState({});
+
+
 
 
   const history = useHistory();
 
   useEffect(() => {
     history.push("/")
-  }, [exercises, logs, history])
+  }, [exercises, history])
 
   // ----------- FUNCTIONS FOR EXERCISES --------------------
   useEffect(() => {
@@ -44,13 +51,13 @@ export default function App() {
     setExercises([...exercises, newExercise]);
   }
 
-  // async function handleUpdateExercise(updatedExerciseData) {
-  //   const updatedExercise = await exerciseAPI.update(updatedExerciseData);
-  //   const newExerciseArray = exercises.map(exercise =>
-  //     exercise._id === updatedExercise._id ? updatedExercise : exercise
-  //   );
-  //   setExercises(newExerciseArray);
-  // }
+  async function handleUpdateExercise(updatedExerciseData) {
+    const updatedExercise = await exerciseAPI.update(updatedExerciseData);
+    const newExerciseArray = exercises.map(exercise =>
+      exercise._id === updatedExercise._id ? updatedExercise : exercise
+    );
+    setExercises(newExerciseArray);
+  }
 
   // async function handleDeleteExercise(exerciseID) {
   //   await exerciseAPI.deleteOne(exerciseID);
@@ -101,7 +108,7 @@ export default function App() {
               <Route path="/exercises">
                 <div className="list-and-detail">
                 <ExerciseListPanel exercises={exercises} setExercises={setExercises} activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
-                <ExerciseDetailPanel exercises={exercises} activeExercise={activeExercise}  />
+                <ExerciseDetailPanel exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
                 </div>
               </Route>
               <Route exact path="/new-log">
