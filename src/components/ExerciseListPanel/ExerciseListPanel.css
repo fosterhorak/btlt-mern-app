@@ -77,6 +77,13 @@
 
 }
 
+.list-btns:hover {
+  border: 1px solid var(--light-text);
+  background-color: var(--blue);
+  color: var(--light-text)
+
+}
+
 .exercise-list-scroll {
   overflow-y: scroll;
   height: 100vh;

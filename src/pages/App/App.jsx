@@ -101,7 +101,7 @@ export default function App() {
               <Route path="/exercises">
                 <div className="list-and-detail">
                 <ExerciseListPanel exercises={exercises} setExercises={setExercises} activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
-                <ExerciseDetailPanel activeExercise={activeExercise}  />
+                <ExerciseDetailPanel exercises={exercises} activeExercise={activeExercise}  />
                 </div>
               </Route>
               <Route exact path="/new-log">

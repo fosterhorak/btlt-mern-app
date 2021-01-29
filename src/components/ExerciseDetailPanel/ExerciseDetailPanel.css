@@ -40,9 +40,14 @@ h3, h4, a {
     margin-top: 2px;
 }
 
-hr {
+hr#a {
     width: 85%;
     border: 1px solid var(--dark-text);
+}
+
+hr#b {
+    width: 100%;
+    border: 1px solid var(--medium-background);
 }
 
 a {
@@ -81,7 +86,7 @@ p {
     color: var(--blue);
 }
 
-.detail-card-body .columnL h3, h4 {
+.detail-card-body .columnL h3, h4, {
     align-self: flex-start;
     color: var(--light-text);
 
@@ -94,6 +99,7 @@ p {
     align-self: start;
 }
 
+
 .columnR {
     padding: 0px;
     margin-left: 5px;
@@ -101,11 +107,54 @@ p {
     color: var(--blue);
     margin-right: 4px;
 
-
 }
+
+.temp p {
+    margin: 20px 70px;
+    padding: 10px;
+}
+
+
+
 .update-delete-btn-container {
     border: 2px solid var(--bold-green);
+    width: 100%;
+    background-color: var(--dark-background);
+    height: 6vh;
+    display: flex;
+    padding: 3px;
 }
+
+.ud-btns {
+    margin: 1px;
+    padding: 1px;
+    color: var(--white-text);
+    background-color: var(--dark-background);
+
+}
+
+.ud-btns#u {
+    border: .5px solid var(--blue);
+
+}
+.ud-btns#d {
+    border: .5px solid var(--red);
+    
+
+}
+.ud-btns#u:hover {
+    border: .5px solid var(--white-text);
+    background-color: var(--blue);
+
+
+}
+.ud-btns#d:hover {
+    border: .5px solid var(--white-text);
+    background-color: var(--red);
+
+
+}
+
 
 .detail-log-graph-container {
     border: 2px solid var(--pale-orange);
@@ -129,7 +178,12 @@ p {
     padding: 1px;
     background-color: var(--dark-background);
     border: .5px solid var(--blue);
-    color: var(--medium-text);
+    color: var(--light-text);
+}
+
+.gl-btns:hover {
+    background-color: var(--blue);
+    border: .5px solid var(--white-text);
 }
 
 .log-graph {
