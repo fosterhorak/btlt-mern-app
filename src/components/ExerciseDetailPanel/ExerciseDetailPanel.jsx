@@ -50,8 +50,15 @@ export default function ExerciseDetailPanel({activeExercise}) {
               <p>created by: {activeExercise.creatorEmail}</p>
               <p>user_id: {activeExercise.creator}</p>
             </div>
-            <div className="detail-log-graph">
-                  <h1>To include a list of recent logs and graph toggle</h1>
+            <div className="detail-log-graph-container">
+
+                  <div className="log-graph">
+                    <h1>recent log list / graph goes here</h1>
+                  </div>
+                  <div className="detail-log-graph-btns">
+                    <button className="gl-btns">RECENT LOGS</button>
+                    <button className="gl-btns">GRAPH</button>
+                  </div>
             </div>
           </div>
  
