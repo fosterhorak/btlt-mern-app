@@ -25,20 +25,58 @@
 .aside {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     margin: 3vmin 2vmin;
     color: var(--light-text);
-    max-width: 170px;
+    width: 20vw;
+    min-width: 150px;
+    max-width: 300px;
+    height: 90vh;
+}
+.aside-logo {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+
+}
+hr {
+    width: 100%;
+    border: 1px solid var(--light-text);
+}
+
+.aside-nav {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.aside-nav button {
+    margin: 3px;
+}
+
+
+.aside-logout {
+    height: 10vh;
+    font-size: 2vmin;
+
+}
+
+#name {
+    font-size: 3.2vmin;
 }
 
 button {
     width: 100%;
     margin: 2vmin 0.5vmin;
     font-size: 15px;
-    background-color: var(--medium-background);
+    background-color: var(--dark-background);
     border: 2px solid var(--light-background);
     padding: 2vmin;
+    color: var(--light-text);
     
 }
 
@@ -47,7 +85,14 @@ button:hover {
 }
 
 .logout {
+    background-color: var(--medium-background);
+    border: 1px solid var(--red);
+}
+
+.logout:hover {
     background-color: var(--red);
+    border: 2px solid var(--light-background);
+
 }
 
 Link.active {

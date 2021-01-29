@@ -41,7 +41,7 @@ h3, h4, a {
 
 hr#a {
     width: 85%;
-    border: 1px solid var(--dark-text);
+    border: 1px solid var(--light-background);
 }
 
 hr#b {
@@ -58,7 +58,7 @@ p {
 }
 
 .top-half {
-    border: 2px solid var(--dark-text);
+    border: 2px solid var(--light-background);
     border-radius: 2vmin;
     background-color: var(--medium-background);
 }
@@ -81,17 +81,19 @@ p {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    max-height: 30vh;
+    height: 28vh;
 
 }
 
 .detail-card-body .columnR h3, h4 {
     color: var(--blue);
+    font-size: 3vmin;
 }
 
-.detail-card-body .columnL h3, h4, {
+.detail-card-body .columnL h3, h4 {
     align-self: flex-start;
     color: var(--light-text);
+    font-size: 3vmin;
 
 }
 
@@ -129,7 +131,7 @@ p {
 .ud-btns {
     margin: 1px;
     padding: 1px;
-    color: var(--white-text);
+    color: var(--light-text);
     background-color: var(--dark-background);
 
 }
@@ -158,7 +160,7 @@ p {
 
 
 .detail-log-graph-container {
-    border: 2px solid var(--dark-text);
+    border: 2px solid var(--light-background);
     height: 43.5vh;
     max-height: 800px;
     border-radius: 2vmin;
@@ -189,7 +191,7 @@ p {
 }
 
 .log-graph {
-    height: 36.5vh;
+    height: 36vh;
     max-height: 410px;
     border-radius: 2vmin;
 }
