@@ -37,7 +37,16 @@ button.auth-button {
     font-size: 3vmin;
 }
 
-.form-container {
-    max-width: 800px;
+.signup-login-div {
+    width: 90vw;
 
 }
+
+.form-container {
+    width: 100%;
+    max-width: 90vw;
+
+
+
+}
+

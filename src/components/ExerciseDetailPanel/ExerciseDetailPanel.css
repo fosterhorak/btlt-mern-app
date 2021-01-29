@@ -99,6 +99,7 @@ p {
     margin-left: 5px;
     text-align: left;
     color: var(--blue);
+    margin-right: 4px;
 
 
 }
@@ -117,7 +118,7 @@ p {
     border-radius: 2vmin;
     width: 100%;
     background-color: var(--dark-background);
-    height: 5vmin;
+    height: 6vh;
     display: flex;
     padding: 3px;
 

@@ -38,11 +38,12 @@ button {
 }
 
 button.switch-form {
-    width: 99.5%;
+    width: 90vw;
+    max-width: 900px;
     
 }
 
-.div{
+.auth-page{
     display: flex;
     flex-direction: column;
     align-items: center;
