@@ -13,6 +13,7 @@ export default function ExerciseDetailPanel({activeExercise}) {
       <>
         { activeExercise ? 
           <div className="detail-container">
+            <div className="top-half">
             <div className="detail-card">
               <div className="detail-card-header">
                 <h1>{activeExercise.name}</h1>
@@ -59,10 +60,12 @@ export default function ExerciseDetailPanel({activeExercise}) {
               <button id="u" className="ud-btns">UPDATE</button>
               <button id="d"className="ud-btns">DELETE</button>
             </div>
+            </div>
             <hr id="b"/>
             <div className="detail-log-graph-container">
 
                   <div className="log-graph">
+                    <br/><br/><br/><br/>
                     <h1>recent log list / graph goes here</h1>
                   </div>
                   <div className="detail-log-graph-btns">
