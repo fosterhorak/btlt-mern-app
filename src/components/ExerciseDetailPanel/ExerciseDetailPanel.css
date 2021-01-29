@@ -1,0 +1,113 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: .3px solid var(--red);
+    margin: 2vmin 2vmin;
+    height: 100%;
+    border-radius: 2vmin;
+    color: var(--light-text);
+
+}
+h1 {
+    font-size: 3vh;
+}
+h3, h4, a {
+    padding: 3px;
+    margin-top: 2px;
+}
+
+hr {
+    width: 85%;
+    color: var(--dark-text);
+}
+
+a {
+    color: var(--pale-orange);
+}
+
+p {
+    text-align: center;
+}
+
+.detail-card {
+    border: 3px solid var(--pale-orange);
+    margin: 2px;
+    border-radius: 2vmin;
+    background-color: var(--medium-background);
+
+
+}
+
+.detail-card-header h1{
+    color: var(--light-text);
+    font-size: 4vh;
+}
+
+.detail-card-body {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.detail-card-body .columnR h3, h4 {
+    color: var(--blue);
+}
+
+.detail-card-body .columnL h3, h4 {
+    align-self: flex-start;
+    color: var(--light-text);
+
+}
+
+.columnL {
+    padding: 0px;
+    margin-left: 4vw;
+    display: flex;
+    align-self: start;
+}
+
+.columnR {
+    padding: 0px;
+    margin-left: 5px;
+    text-align: left;
+    color: var(--blue);
+
+
+}
+.update-delete-btn-container {
+    border: 2px solid var(--bold-green);
+}
+
+.detail-log-graph {
+    border: 2px solid var(--pale-orange);
+    height: 100%;
+    border-radius: 2vmin;
+
+}
+

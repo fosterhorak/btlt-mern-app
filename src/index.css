@@ -179,17 +179,6 @@ button[type="submit"] {
 }
 
 
-
-
-
-.detail-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3vmin 2vmin;
-}
-
 .new-form {
   display: flex;
   flex-direction: column;

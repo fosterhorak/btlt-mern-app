@@ -1,18 +1,63 @@
 
+import './ExerciseDetailPanel.css';
 export default function ExerciseDetailPanel({activeExercise}) {
 
     return (
-      <div className="detail-panel">
+      <>
+        { activeExercise ? 
+          <div className="detail-container">
+            <div className="detail-card">
+              <div className="detail-card-header">
+                <h1>{activeExercise.name}</h1>
+                <hr/>
+              </div>
+              <div className="detail-card-body">
 
-          <h1>ExerciseDetailPanel</h1> 
-          <h3>{activeExercise.name}</h3>
-          <h3>{activeExercise.category}</h3>
-          <h3>{activeExercise.logType}</h3>
-          <h3>{activeExercise.description}</h3>
-          <h3>{activeExercise.demolink}</h3>
-          <h3>{activeExercise.creatorID}</h3>
-          
+                  <div className="columnL">
+                    <h3>Category: </h3>
+                  </div>
+                  <div className="columnR">
+                    <h3>{activeExercise.category}</h3>
+                  </div>
 
-      </div>
+                  <div className="columnL">
+                    <h3>Log Type: </h3>
+                  </div>
+                  <div className="columnR">
+                    <h3>{activeExercise.logType}</h3>
+                  </div>
+
+                  <div className="columnL">
+                    <h3>Description: </h3>
+                  </div>
+                  <div className="columnR">
+                    <h3>{activeExercise.description}</h3>
+                  </div>
+
+                  { activeExercise.demoLink ? 
+                    <>
+                    <div className="columnL">
+                      <h3>Demo URL: </h3>
+                    </div>
+                    <div className="columnR">
+                      <h4><a href={activeExercise.demoLink}> LINK </a></h4>
+                    </div>
+                    </>
+                  : ""}
+              </div>
+            </div>
+            <div className="update-delete-btn-container">
+              <p>created by: {activeExercise.creatorEmail}</p>
+              <p>user_id: {activeExercise.creator}</p>
+            </div>
+            <div className="detail-log-graph">
+                  <h1>To include a list of recent logs and graph toggle</h1>
+            </div>
+          </div>
+ 
+
+
+        : ''}
+      </>
     );
   }

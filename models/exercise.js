@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const exerciseSchema = new Schema({
     name: {type: String, required: true}, //user input
     category: { type: String, 
@@ -27,10 +28,19 @@ const exerciseSchema = new Schema({
     },
     description: {type: String},    //user input
     demoLink: {type: String},       //user input
-    creatorID: {type: Schema.Types.ObjectId, ref: 'User'},  //pulled from user model
+    creator: {type: Schema.Types.ObjectId, ref:'User'}, //pulled from req.user
+    creatorEmail: {type: String},  //copied over on the "new exercise form" via setFormData...
 }, {
     timestamps: true,
+    //incase i need a virtual porperty
+    toJSON: { virtuals: true},
 });
 
+
+exerciseSchema.statics.getUserExercises = async function (userId) {
+    return this.find(
+        {creator: userId},  
+    );
+};
 
 module.exports = mongoose.model('Exercise', exerciseSchema);

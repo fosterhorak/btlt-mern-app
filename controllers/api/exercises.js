@@ -1,5 +1,5 @@
+const { render } = require('@testing-library/react');
 const Exercise = require('../../models/exercise');
-const User = require('../../models/user');
 
 module.exports = {
     index,
@@ -12,13 +12,16 @@ module.exports = {
 
 async function index(req, res) {
     const exercises = await Exercise.find({});
+    
+    // console.log(`req.user is equal to... ${req.user}`);
+    // const exercises = await Exercise.getUserExercises(req.user._id);
+
     res.status(200).json(exercises);
 }
 
 async function create(req, res) {
     const exercise = await Exercise.create(req.body);
     console.log(exercise);
-
     res.status(201).json(exercise);
 }
 
