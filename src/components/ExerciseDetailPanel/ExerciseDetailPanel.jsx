@@ -1,7 +1,6 @@
 import './ExerciseDetailPanel.css';
-import Popup from 'reactjs-popup';
-import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
-import ExerciseDetailTop from '../ExerciseDetailTop/ExerciseDetailTop';
+import ExerciseDetailTop from './ExerciseDetailTop/ExerciseDetailTop';
+import ExerciseDetailBottom from './ExerciseDetailBottom/ExerciseDetailBottom';
 
 export default function ExerciseDetailPanel({activeExercise, exercises, handleUpdateExercise}) {
 
@@ -17,20 +16,7 @@ export default function ExerciseDetailPanel({activeExercise, exercises, handleUp
             
             <hr id="b"/>
 
-            {/*<ExerciseDetailBottom />*/}
-
-            <div className="detail-log-graph-container">
-
-                  <div className="log-graph">
-                    <br/><br/><br/><br/>
-                    <h1>recent log list / graph goes here</h1>
-                  </div>
-                  <div className="detail-log-graph-btns">
-                    <button className="gl-btns">RECENT LOGS</button>
-                    <button className="gl-btns">GRAPH</button>
-                  </div>
-            </div>
-
+            <ExerciseDetailBottom />
 
           </div>
  

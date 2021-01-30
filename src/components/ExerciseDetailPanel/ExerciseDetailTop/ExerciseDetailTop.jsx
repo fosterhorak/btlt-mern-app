@@ -1,6 +1,6 @@
 import './ExerciseDetailTop.css';
 import Popup from 'reactjs-popup';
-import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
+import EditExerciseForm from '../../EditExerciseForm/EditExerciseForm';
 
 export default function ExerciseDetailTop({activeExercise, exercises, handleUpdateExercise}) {
 

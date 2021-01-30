@@ -1,0 +1,83 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+}
+
+
+h1 {
+    font-size: 3vh;
+}
+h3, h4, a {
+    padding: 3px;
+    margin-top: 2px;
+}
+
+
+
+a {
+    color: var(--pale-orange);
+}
+
+p {
+    text-align: center;
+}
+
+
+
+
+
+
+.detail-log-graph-container {
+    border: 2px solid var(--light-background);
+    height: 43.5vh;
+    max-height: 800px;
+    border-radius: 2vmin;
+
+}
+
+.detail-log-graph-btns {
+    border-radius: 2vmin;
+    width: 100%;
+    background-color: var(--dark-background);
+    height: 6vh;
+    display: flex;
+    padding: 3px;
+
+}
+
+.gl-btns {
+    margin: 1px;
+    padding: 1px;
+    background-color: var(--dark-background);
+    border: .5px solid var(--blue);
+    color: var(--light-text);
+}
+
+.gl-btns:hover {
+    background-color: var(--blue);
+    border: .5px solid var(--white-text);
+}
+
+.log-graph {
+    height: 36vh;
+    max-height: 410px;
+    border-radius: 2vmin;
+}
