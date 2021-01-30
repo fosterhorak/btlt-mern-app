@@ -1,0 +1,158 @@
+:root {  
+    --dark-background: rgb(20, 20, 20);
+    --medium-background: rgb(30, 30, 30);
+    --light-background: rgb(40, 40, 40);
+    
+    --light-gray: rgb(60, 60, 60);
+    --dark-gray: rgb(46, 46, 46);
+    --light-blue: rgb(121,212,255);
+    --red: rgb(235,33,0);
+    --blue: rgb(47,118,238);
+    --bold-orange: rgb(237, 77, 38);
+    --pale-orange: rgb(225, 179, 114);
+    --muted-orange: rgb(205, 122, 96);
+
+    --bold-yellow: rgb(245, 192, 0);
+    --bold-green:rgb(89, 172, 30);
+
+    --white-text:  rgb(255, 255, 255);
+    --light-text:  rgb(183, 183, 183);
+    --medium-text:  rgb(150, 150, 150);
+    --dark-text:  rgb(80, 80, 80);
+}
+
+
+h1 {
+    font-size: 3vh;
+}
+h3, h4, a {
+    padding: 3px;
+    margin-top: 2px;
+}
+
+hr#a {
+    width: 85%;
+    border: 1px solid var(--light-background);
+}
+
+hr#b {
+    width: 100%;
+    border: 1px solid var(--medium-background);
+}
+
+a {
+    color: var(--pale-orange);
+}
+
+p {
+    text-align: center;
+}
+
+.top-half {
+    border: 2px solid var(--light-background);
+    border-radius: 2vmin;
+    background-color: var(--medium-background);
+}
+
+.detail-card {
+    margin: 2px;
+
+
+
+}
+
+.detail-card-header h1{
+    color: var(--light-text);
+    font-size: 4vh;
+}
+
+.detail-card-body {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: 28vh;
+
+}
+
+.detail-card-body .columnR h3, h4 {
+    color: var(--blue);
+    font-size: 3vmin;
+}
+
+.detail-card-body .columnL h3, h4 {
+    align-self: flex-start;
+    color: var(--light-text);
+    font-size: 3vmin;
+
+}
+
+.columnL {
+    padding: 0px;
+    margin-left: 4vw;
+    display: flex;
+    align-self: start;
+}
+
+
+.columnR {
+    padding: 0px;
+    margin-left: 5px;
+    text-align: left;
+    color: var(--blue);
+    margin-right: 4px;
+
+}
+
+.temp p {
+    margin: 20px 70px;
+    padding: 10px;
+}
+
+
+
+.update-delete-btn-container {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    padding: 3px;
+}
+
+.ud-btns {
+    margin: 1px;
+    padding: 1px;
+    color: var(--light-text);
+    background-color: var(--dark-background);
+
+}
+
+.ud-btns#u {
+    border: .5px solid var(--blue);
+
+}
+.ud-btns#d {
+    border: .5px solid var(--red);
+    
+
+}
+.ud-btns#u:hover {
+    border: .5px solid var(--white-text);
+    background-color: var(--blue);
+
+
+}
+.ud-btns#d:hover {
+    border: .5px solid var(--white-text);
+    background-color: var(--red);
+
+
+}
+
+
+.exercise-update-popup {
+    background-color: var(--dark-background);
+    margin-bottom: -5px;
+    padding: 5px;
+
+}
