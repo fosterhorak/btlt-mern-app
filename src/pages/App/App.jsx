@@ -4,10 +4,10 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import Aside from '../../components/Aside/Aside';
-import ExerciseLogListPanel from '../../components/ExerciseLogListPanel/ExerciseLogListPanel';
-import ExerciseLogDetailPanel from '../../components/ExerciseLogDetailPanel/ExerciseLogDetailPanel';
+import ExerciseLogListPanel from '../../components/LogListPanel/LogListPanel';
+import ExerciseLogDetailPanel from '../../components/Log/LogDetailPanel/LogDetailPanel';
 import ExerciseListPanel from '../../components/ExerciseListPanel/ExerciseListPanel';
-import ExerciseDetailPanel from '../../components/ExerciseDetailPanel/ExerciseDetailPanel';
+import ExerciseDetailPanel from '../../components/Exercise/ExerciseDetailPanel/ExerciseDetailPanel';
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 

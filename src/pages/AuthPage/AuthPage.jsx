@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import VisitorHeader from '../../components/VisitorHeader/VisitorHeader'
+import VisitorHeader from './VisitorHeader/VisitorHeader'
 
 import './AuthPage.css';
 

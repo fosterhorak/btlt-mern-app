@@ -1,4 +1,4 @@
-import ExerciseListCard from "../ExerciseListCard/ExerciseListCard";
+import ExerciseListCard from "./ExerciseListCard/ExerciseListCard";
 import './ExerciseListPanel.css';
 
 export default function ExerciseListPanel(props) {
