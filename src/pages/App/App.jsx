@@ -42,10 +42,12 @@ export default function App() {
       const exercises = await exerciseAPI.getAll();
       setExercises(exercises);
     }
-    getExercises();
-  }, [])
+    if (user) getExercises();
+    else setExercises([]);
+  }, [user]);
 
   async function handleAddExercise(newExerciseData) {
+    // console.log(history);
     const newExercise = await exerciseAPI.create(newExerciseData);
     setExercises([...exercises, newExercise]);
   }

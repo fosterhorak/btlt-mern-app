@@ -2,7 +2,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import './EditExerciseForm.css';
 import Popup from 'reactjs-popup';
-import { set } from 'mongoose';
 
 
 

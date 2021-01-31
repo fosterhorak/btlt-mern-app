@@ -16,7 +16,7 @@ export default function Aside({ user, setUser }) {
                 <hr/>
             </div>
             <div className="aside-nav">
-                <Link exact to="/"> <button>Exercise Log</button> </Link>
+                <Link exact to="/logs"> <button>Exercise Log</button> </Link>
                 <Link exact to="/exercises"><button>Exercises</button></Link>
                 <Link exact to="/new-log"> <button> New Log </button></Link>
                 <Link exact to="/new-exercise"><button> New Exercise</button> </Link>
