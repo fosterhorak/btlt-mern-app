@@ -29,5 +29,11 @@
     height: 90vh;
     border-radius: 2vmin;
     color: var(--light-text);
+    width: 41vw;
+    min-width: 500px;
 
+}
+
+hr#b{
+    margin: 1vh 0px;
 }

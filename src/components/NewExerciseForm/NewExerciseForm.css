@@ -70,8 +70,9 @@ form {
 
 div#new-exercise {
     width: 70vw;
-    height: 85vh;
-    margin: 3vmin 3vmin;
+    height: 90vh;
+    border-radius: 2vmin;
+    margin: 2vmin 2vmin;
 }
 
 button.form-btn {

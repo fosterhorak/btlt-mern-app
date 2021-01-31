@@ -46,6 +46,9 @@ h1 {
     margin-bottom: 0px;
     font-size: 2vh;
 }
+h1.card-title {
+    font-size: 3vmin;
+}
 
 .b {
     color: var(--blue);

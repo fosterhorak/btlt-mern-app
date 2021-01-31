@@ -52,6 +52,8 @@ p {
     border: 2px solid var(--light-background);
     border-radius: 2vmin;
     background-color: var(--medium-background);
+    width: 41vw;
+    min-width: 500px;
 }
 
 .detail-card {

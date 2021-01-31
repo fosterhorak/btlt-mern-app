@@ -32,7 +32,7 @@ main {
   grid-template-rows: 1fr;
   background-color: var(--dark-background);
   border-radius: 2vmin;
-  min-width: 945px;
+  min-width: 1160px;
 }
 
 
