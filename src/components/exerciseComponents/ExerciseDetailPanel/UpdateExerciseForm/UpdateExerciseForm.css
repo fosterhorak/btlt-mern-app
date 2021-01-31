@@ -59,13 +59,14 @@ form.update-form {
     color: var(--blue);
 }
 
-button.form-btn {
+button.update-exercise-btn {
     justify-self: center;
     width: 90%;
     height: 6vh;
-    font-size: 4vh;
+    font-size: 3vh;
     padding: 0px;
     margin-top: 3px;
+    margin-bottom: 0px;
 }
 h5 {
     justify-self: center;
@@ -145,10 +146,11 @@ button.cncl-form {
     height: 6vh;
     font-size: 4vh;
     padding: 0px;
-    margin-top: 3px;
+    margin-top: 0px;
+    border: 1px solid var(--dark-background);
 }
 
 .scrollable {
     overflow-y: scroll;
-    height: 80vh;
+    height: 89vh;
 }

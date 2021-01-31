@@ -26,6 +26,20 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
         formRef.current.checkValidity() ? setInvalidForm(false) : setInvalidForm(true);
     }, [formData]);
 
+    useEffect(() => {
+        setFormData({
+            _id: activeExercise._id,
+            name: activeExercise.name,
+            category: activeExercise.category, 
+            logType: activeExercise.logType,
+            description: activeExercise.description,
+            demoLink: activeExercise.demoLink, 
+            creatorEmail: activeExercise.creatorEmail,
+            creator: activeExercise.creator,
+        });
+
+    }, [activeExercise]);
+
     const handleSubmit = (e) => {
         e.preventDefault()
         handleUpdateExercise(formData);
@@ -50,13 +64,13 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
             // or perhaps, just avoid doing this.. only reference the exercise._id in the log model
     return (
         <div className="new-form">
-            <h1 className="update-form">Update Exercise</h1> 
+            <h1 className="update-form">UPDATE EXERCISE</h1> 
             <div className="scrollable">
             <form className="update-form" autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
     
 
                     <div className="form-groupL">
-                        <label> <strong>Exercise Name</strong> </label>
+                        <label> <strong>EXERCISE NAME</strong> </label>
                     </div>
                     <div className="form-groupR">
                         <input
@@ -71,7 +85,7 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
 
 
                     <div className="form-groupL">
-                        <label><strong>Category</strong> </label>
+                        <label><strong>CATEGORY</strong> </label>
                     </div>
                     <div className="form-groupR">
                         <select 
@@ -81,20 +95,20 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
                             value={formData.category}
                             onChange={handleChange}
                             required>
-                            <option value="Weights">Weights</option>
-                            <option value="Kettlebells">Kettlebells</option>
-                            <option value="Body Weight">Body Weight</option>
-                            <option value="Mixed">Mixed</option>
-                            <option value="Cardio">Cardio</option>
-                            <option value="Interval">Interval</option>
-                            <option value="Stretching/Mobility">Stretching/Mobility</option>
-                            <option value="Other">Other</option>
+                            <option value="Weights">WEIGHTS</option>
+                            <option value="Kettlebells">KETTLEBELLS</option>
+                            <option value="Body Weight">BODY WEIGHT</option>
+                            <option value="Mixed">MIXED</option>
+                            <option value="Cardio">CARDIO</option>
+                            <option value="Interval">INTERVAL</option>
+                            <option value="Stretching/Mobility">STRETCHING/MOBILITY</option>
+                            <option value="Other">OTHER</option>
                         </select>
                     </div>
 
                     <div className="form-groupL">
-                        <label><strong>Log Type</strong></label>
-                        <p className="update-exercise">Note: "Log Type" cannot be changed as it will impact existing logged exercises.</p> 
+                        <label><strong>LOG TYPE</strong></label>
+                        <p className="update-exercise">NOTE: "LOG TYPE" cannot be changed as it will impact existing logged exercises.</p> 
                     </div>
                     <div className="form-groupR">
                         <label>{activeExercise.logType}</label>
@@ -112,7 +126,7 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
 
 
                     <div className="form-groupL">
-                        <label><strong>Description</strong> </label>
+                        <label><strong>DESCRIPTION</strong> </label>
                         <p className="update-exercise">Feel free to update the description to add details, but we don't recommend changing the workout (especially if you already have logged some exercises). You want to be sure you're performing the same workout so your data is helpful and accurate.</p>
                     </div>
                     <div className="form-groupR">
@@ -131,11 +145,11 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
 
 
                     <div className="form-groupL">
-                        <label><strong>Demo URL</strong> </label>
+                        <label><strong>DEMO URL</strong> </label>
                         { activeExercise.demoLink ? 
-                            <p className="update-exercise">Feel free to add a link to a website/video for this exercise.</p>
+                            <p className="update-exercise">Feel free to update your link to your chosen website or video for this exercise.</p>
                         :
-                            <p className="update-exercise">Feel free to update your link to your chosen website/video for this exercise.</p>
+                            <p className="update-exercise">Feel free to add a link to a website or video for this exercise.</p>
                         }
                     </div>
                     <div className="form-groupR">   
@@ -150,7 +164,7 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
                 
 
                     <button
-                        className="form-btn"
+                        className="form-btn update-exercise-btn"
                         type="submit"
                         disabled={invalidForm}
                         >
@@ -158,8 +172,9 @@ export default function UpdateExerciseForm({ activeExercise, handleUpdateExercis
                     </button>
 
             </form>
-            </div>
             <button className="cncl-form" onClick={handleCancel}> <h5>CANCEL</h5></button>
+
+            </div>
         </div>
     );
 }

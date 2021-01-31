@@ -29,14 +29,14 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                     <h3>Category: </h3>
                     </div>
                     <div className="columnR">
-                    <h3>{activeExercise.category}</h3>
+                    <h3>{activeExercise.category.toUpperCase()}</h3>
                     </div>
 
                     <div className="columnL">
                     <h3>Log Type: </h3>
                     </div>
                     <div className="columnR">
-                    <h3>{activeExercise.logType}</h3>
+                    <h3>{activeExercise.logType.toUpperCase()}</h3>
                     </div>
 
                     <div className="columnL">

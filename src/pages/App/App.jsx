@@ -45,7 +45,11 @@ export default function App() {
       setExercises(exercises);
     }
     if (user) getExercises();
-    else setExercises([]);
+    else {
+      setExercises([]);
+      setActiveExercise({});
+      setUpdateExerciseForm(false);
+    }
   }, [user]);
 
   async function handleAddExercise(newExerciseData) {
@@ -63,6 +67,7 @@ export default function App() {
       exercise._id === updatedExercise._id ? updatedExercise : exercise
     );
     setExercises(newExerciseArray);
+    setActiveExercise(updatedExercise);
     setUpdateExerciseForm(false);
   }
 

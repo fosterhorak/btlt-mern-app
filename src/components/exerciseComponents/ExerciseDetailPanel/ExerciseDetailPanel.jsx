@@ -5,8 +5,8 @@ import UpdateExerciseForm from './UpdateExerciseForm/UpdateExerciseForm';
 
 export default function ExerciseDetailPanel({activeExercise, exercises, handleUpdateExercise, updateExerciseForm, setUpdateExerciseForm}) {
 
-    // i want the form to update an existing exercise to pop up and replace the two detail panels if the "update" button is selected
-    // must incorporate a new hook -- "updateExercise" -- into the existing ternary on this page...
+
+    // If the UpdateExerciseForm is up, and I click on a new exercise, I want to see the UpdateExerciseForm for the new active exercise...
 
     return (
       <>

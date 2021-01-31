@@ -138,7 +138,7 @@ export default function NewExerciseForm(props) {
 
             <div className="form-groupL">
                 <label><strong>Demo URL</strong> </label>
-                <p>Feel free to add a link to a website/video for this exercise.</p>
+                <p>Feel free to add a link to a website or video for this exercise.</p>
 
             </div>
 
