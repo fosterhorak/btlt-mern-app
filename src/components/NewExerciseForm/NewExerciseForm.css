@@ -22,10 +22,16 @@
   }
 
 h1 {
-
+    color: var(--light-text);
+    font-size: 4vmin;
 }
-.new-form {
 
+h1#new-exercise-title {
+    margin-bottom: 1vmin 0px 0px 0px;
+}
+form#new-exercise {
+    overflow-y: scroll;
+    height: 70vh;
 }
 
 div.popup {
@@ -62,11 +68,10 @@ form {
 
 }
 
-.form-groupL {
-
-}
-.form-groupR {
-
+div#new-exercise {
+    width: 70vw;
+    height: 85vh;
+    margin: 3vmin 3vmin;
 }
 
 button.form-btn {
@@ -84,10 +89,11 @@ input {
     min-height: 40px;
     font-size: 3vmin;
     color: var(--blue);
+    background-color: var(--dark-background);
 }
 
 select{
-    background-color: var(--medium-background);
+    background-color: var(--dark-background);
     color: var(--blue);
     width: 80%;
     min-height: 40px;
@@ -112,7 +118,7 @@ p {
 }
 
 textarea {
-    background-color: var(--medium-background);
+    background-color: var(--dark-background);
     color: var(--blue);
     width: 80%;
     min-height: 40px;
@@ -122,9 +128,11 @@ textarea {
     
 }
 textarea:focus {
+    outline-color: var(--red);
     border-color: var(--red);
+    border: 1px solid var(--red);
 }
 
-button {
-
+button#new-exercise {
+    width: 80%;
 }

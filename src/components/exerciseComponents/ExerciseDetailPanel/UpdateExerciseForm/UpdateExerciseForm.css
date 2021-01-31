@@ -28,7 +28,7 @@ h1.update-form {
     margin-bottom: 5px;
 }
 .new-form {
-    background-color: var(--light-background);
+    background-color: var(--medium-background);
     width: 40vw;
     height: 90vh;
     margin: 0px 2vmin 2vmin 2vmin;
@@ -67,7 +67,15 @@ button.update-exercise-btn {
     padding: 0px;
     margin-top: 3px;
     margin-bottom: 0px;
+    background-color: var(--dark-background);
+    border: 1px solid var(--blue);
 }
+
+button.update-exercise-btn:hover {
+    background-color: var(--blue);
+    border: 1px solid var(--dark-background);
+}
+
 h5 {
     justify-self: center;
     margin: 3px;
@@ -95,10 +103,11 @@ input#ee {
     font-size: 3vmin;
     color: var(--blue);
     margin: 0px;
+    background-color: var(--dark-background);
 }
 
 select#ee{
-    background-color: var(--medium-background);
+    background-color: var(--dark-background);
     color: var(--blue);
     width: 100%;
     min-height: 40px;
@@ -123,7 +132,7 @@ p {
 }
 
 textarea#ee {
-    background-color: var(--medium-background);
+    background-color: var(--dark-background);
     color: var(--blue);
     width: 100%;
     min-height: 40px;
@@ -147,6 +156,11 @@ button.cncl-form {
     font-size: 4vh;
     padding: 0px;
     margin-top: 0px;
+    border: 1px solid var(--red);
+}
+
+button.cncl-form:hover {
+    background-color: var(--blue);
     border: 1px solid var(--dark-background);
 }
 

@@ -137,13 +137,13 @@ p {
 
 }
 .ud-btns#u:hover {
-    border: .5px solid var(--white-text);
+    border: .5px solid var(--dark-background);
     background-color: var(--blue);
 
 
 }
 .ud-btns#d:hover {
-    border: .5px solid var(--white-text);
+    border: .5px solid var(--dark-background);
     background-color: var(--red);
 
 

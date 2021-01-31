@@ -73,7 +73,7 @@ p {
 
 .gl-btns:hover {
     background-color: var(--blue);
-    border: .5px solid var(--white-text);
+    border: .5px solid var(--dark-background);
 }
 
 .log-graph {

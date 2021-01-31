@@ -33,12 +33,12 @@ export default function NewExerciseForm(props) {
     }
 
     return (
-        <div className="new-form">
-            <h1>Add A New Exercise</h1> 
-            <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+        <div className="new-form" id="new-exercise">
+            <h1 id="new-exercise-title">CREATE A NEW EXERCISE</h1> 
+            <form id="new-exercise" autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
             
             <div className="form-groupL">
-                <label> <strong>Exercise Name</strong> </label>
+                <label> <strong>EXERCISE NAME</strong> </label>
             </div>
 
             <div className="form-groupR">
@@ -52,7 +52,7 @@ export default function NewExerciseForm(props) {
             </div>
 
             <div className="form-groupL">
-                <label><strong>Category</strong> </label>
+                <label><strong>CATEGORY</strong> </label>
             </div>
             <div className="form-groupR">
                 <select 
@@ -61,23 +61,23 @@ export default function NewExerciseForm(props) {
                     value={formData.category}
                     onChange={handleChange}
                     required>
-                    <option value="Weights">Weights</option>
-                    <option value="Kettlebells">Kettlebells</option>
-                    <option value="Body Weight">Body Weight</option>
-                    <option value="Mixed">Mixed</option>
-                    <option value="Cardio">Cardio</option>
-                    <option value="Interval">Interval</option>
-                    <option value="Stretching/Mobility">Stretching/Mobility</option>
-                    <option value="Other">Other</option>
+                    <option value="Weights">WEIGHTS</option>
+                    <option value="Kettlebells">KETTLEBELLS</option>
+                    <option value="Body Weight">BODY WEIGHT</option>
+                    <option value="Mixed">MIXED</option>
+                    <option value="Cardio">CARDIO</option>
+                    <option value="Interval">INTERVAL</option>
+                    <option value="Stretching/Mobility">STRETCHING/MOBILITY</option>
+                    <option value="Other">OTHER</option>
                 </select>
             </div>
 
             <div className="form-groupL">
-                <label><strong>Log Type</strong></label>
-                <p>Different "Log Types" will track different metrics.</p> 
+                <label><strong>LOG TYPE</strong></label>
+                <p>NOTE: Each "LOG TYPE" will track different metrics.</p> 
                 <Popup 
-                    trigger={<button className="popup-btn">click for details</button>} 
-                    position="right center"
+                    trigger={<button className="popup-btn">CLICK FOR DETAILS</button>} 
+                    position="right"
                     closeOnDocumentClick>
                     <div className="popup">
                         <h2>Metrics tracked for each Log Type are shown below...</h2> 
@@ -93,7 +93,7 @@ export default function NewExerciseForm(props) {
                             <li><strong> Cardio:</strong>  distance,  time, avg speed</li>
                             <li><strong> Simple:</strong>   completed(y/n)</li>
                         </ul>
-                        <small className="close-popup-msg">[click away to close pop-up]</small>
+                        <small className="close-popup-msg">[CLICK AWAY TO CLOSE]</small>
                     </div>
                 </Popup>                    
             </div>
@@ -119,7 +119,7 @@ export default function NewExerciseForm(props) {
             </div>
 
             <div className="form-groupL">
-                <label><strong>Description</strong> </label>
+                <label><strong>DESCRIPTION</strong> </label>
                 <p>We recommend you add a description of your new exercise for reference (if need it in the future). This will also ensure you complete the exercise the same way every time.</p>
 
             </div>
@@ -137,7 +137,7 @@ export default function NewExerciseForm(props) {
             </div>
 
             <div className="form-groupL">
-                <label><strong>Demo URL</strong> </label>
+                <label><strong>DEMO URL</strong> </label>
                 <p>Feel free to add a link to a website or video for this exercise.</p>
 
             </div>
@@ -151,6 +151,7 @@ export default function NewExerciseForm(props) {
                 />
             </div>
             <button
+                id="new-exercise"
                 className="form-btn"
                 type="submit"
                 disabled={invalidForm}

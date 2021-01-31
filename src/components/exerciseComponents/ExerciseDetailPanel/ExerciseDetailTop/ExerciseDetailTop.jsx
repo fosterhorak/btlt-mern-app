@@ -1,6 +1,4 @@
 import './ExerciseDetailTop.css';
-import Popup from 'reactjs-popup';
-import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
 
 export default function ExerciseDetailTop({activeExercise, exercises, handleUpdateExercise, updateExerciseForm, setUpdateExerciseForm}) {
 
@@ -9,10 +7,6 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
         setUpdateExerciseForm(true);
     }
 
-
-    
-    // i want the form to update an existing exercise to pop up and replace the two detail panels if the "update" button is selected
-    // must incorporate a new hook -- "updateExercise" -- into the existing ternary on this page...
 
     return (
         <>
@@ -36,7 +30,7 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                     <h3>Log Type: </h3>
                     </div>
                     <div className="columnR">
-                    <h3>{activeExercise.logType.toUpperCase()}</h3>
+                    <h3>{activeExercise.logType}</h3>
                     </div>
 
                     <div className="columnL">
@@ -61,16 +55,7 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                 </div>
             </div>
             <div className="update-delete-btn-container">
-                <Popup 
-                trigger={<button id="u" className="ud-btns">UPDATE</button>} 
-                position="center center"
-                arrow="false"
-                closeOnClick>
-                <div className="exercise-update-popup">
-                    <EditExerciseForm exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
-                </div>
-                </Popup>  
-                <button onClick={handleUpdateExerciseButton} id="u"className="ud-btns">UPDATE*</button>
+                <button onClick={handleUpdateExerciseButton} id="u"className="ud-btns">UPDATE</button>
                 <button id="d"className="ud-btns">DELETE</button>
             </div>
             </div>
