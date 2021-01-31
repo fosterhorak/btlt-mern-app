@@ -41,7 +41,8 @@
 }
 hr {
     width: 100%;
-    border: 1px solid var(--light-text);
+    border: 1px solid var(--medium-background);
+
 }
 
 .aside-nav {
@@ -84,7 +85,13 @@ button:hover {
     background-color: var(--blue);
 }
 
-.logout {
+button#nav-btn, button.logout{
+    width: 15vw;
+    min-width: 175px;
+    margin: 1vmin 4vmin;
+}
+
+button.logout {
     background-color: var(--medium-background);
     border: 1px solid var(--red);
 }

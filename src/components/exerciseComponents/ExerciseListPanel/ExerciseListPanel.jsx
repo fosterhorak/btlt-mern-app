@@ -6,7 +6,7 @@ export default function ExerciseListPanel(props) {
     return (
       <>
         <div className="list-panel">
-          <h1 className="list-title">Exercise List</h1> 
+          <h1 className="list-title">EXERCISE LIST</h1> 
           
           <div className="exercise-list-container">
             

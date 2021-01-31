@@ -16,15 +16,15 @@ export default function Aside({ user, setUser }) {
                 <hr/>
             </div>
             <div className="aside-nav">
-                <Link exact to="/logs"> <button>Exercise Log</button> </Link>
-                <Link exact to="/exercises"><button>Exercises</button></Link>
-                <Link exact to="/new-log"> <button> New Log </button></Link>
-                <Link exact to="/new-exercise"><button> New Exercise</button> </Link>
+                <Link exact to="/logs"> <button id="nav-btn">EXERCISE LOGS</button> </Link>
+                <Link exact to="/exercises"><button id="nav-btn">EXERCISES</button></Link>
+                <Link exact to="/new-log"> <button id="nav-btn"> NEW LOG </button></Link>
+                <Link exact to="/new-exercise"><button id="nav-btn"> NEW EXERCISE</button> </Link>
             </div>
             <div className="aside-logout">
                 <span><strong id="name"> Hi, {user.name}!</strong></span><br/>
                 <span>{user.email}</span>
-                <Link to="" onClick={handleLogOut}> <button className="logout">Log Out</button> </Link> 
+                <Link to="" onClick={handleLogOut}> <button className="logout">LOG OUT</button> </Link> 
             </div>
         </div>
 

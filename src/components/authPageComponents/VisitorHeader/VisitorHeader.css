@@ -21,6 +21,18 @@
     --dark-text:  rgb(80, 80, 80);
 }
 
-h1, h3 {
+h1, h3, h2 {
     color: var(--medium-text);
-  }
+    word-spacing: .15em;
+    
+}
+
+hr.hr {
+    width: 80%;
+    border: 1px solid var(--light-background);
+}
+
+span.auth {
+    font-size: 1.3em;
+    text-decoration: underline;
+}

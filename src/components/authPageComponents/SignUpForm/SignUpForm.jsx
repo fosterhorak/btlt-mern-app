@@ -38,13 +38,13 @@ export default class SignUpForm extends Component {
       <div className="signup-login-div">
         <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>Name</label>
+            <label>NAME</label>
             <input className="auth-input" type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-            <label>Email</label>
+            <label>EMAIL</label>
             <input className="auth-input" type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
+            <label>PASSWORD</label>
             <input className="auth-input" type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <label>Confirm</label>
+            <label>CONFIRM</label>
             <input className="auth-input" type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
             <button type="submit" className="auth-button" disabled={disable}>SIGN UP</button>
           </form>

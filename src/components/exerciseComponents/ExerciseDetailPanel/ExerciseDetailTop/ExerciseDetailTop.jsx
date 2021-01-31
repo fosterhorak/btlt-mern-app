@@ -20,21 +20,21 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                 <div className="detail-card-body">
 
                     <div className="columnL">
-                    <h3>Category: </h3>
+                    <h3>CATEGORY: </h3>
                     </div>
                     <div className="columnR">
                     <h3>{activeExercise.category.toUpperCase()}</h3>
                     </div>
 
                     <div className="columnL">
-                    <h3>Log Type: </h3>
+                    <h3>LOG TYPE: </h3>
                     </div>
                     <div className="columnR">
                     <h3>{activeExercise.logType}</h3>
                     </div>
 
                     <div className="columnL">
-                    <h3>Description: </h3>
+                    <h3>DESCRIPTION: </h3>
                     </div>
                     <div className="columnR">
                     <h3>{activeExercise.description}</h3>
@@ -43,7 +43,7 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                     { activeExercise.demoLink ? 
                     <>
                     <div className="columnL">
-                        <h3>Demo URL: </h3>
+                        <h3>DEMO URL: </h3>
                     </div>
                     <div className="columnR">
                         <h4><a href={activeExercise.demoLink} target="_blank"> LINK </a></h4>
