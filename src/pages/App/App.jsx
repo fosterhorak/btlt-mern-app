@@ -14,6 +14,7 @@ import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 
 import * as exerciseAPI from '../../utilities/exercises-api';
 import * as logAPI from '../../utilities/logs-api';
+import UpdateExerciseForm from '../../components/exerciseComponents/ExerciseDetailPanel/UpdateExerciseForm/UpdateExerciseForm';
 
 
 
@@ -23,6 +24,7 @@ export default function App() {
   const [exercises, setExercises] = useState([]);
   const [activeExercise, setActiveExercise] = useState({});
 
+  const [updateExerciseForm, setUpdateExerciseForm] = useState(false);
   
   // const [logs, setLogs] = useState([]);
   // const [activeLog, setActiveLog] = useState({});
@@ -47,17 +49,21 @@ export default function App() {
   }, [user]);
 
   async function handleAddExercise(newExerciseData) {
-    // console.log(history);
     const newExercise = await exerciseAPI.create(newExerciseData);
     setExercises([...exercises, newExercise]);
   }
 
   async function handleUpdateExercise(updatedExerciseData) {
+    console.log(`activeExercise.name is... : ${activeExercise}`);
+    console.log(`setUpdateExerciseForm is set to... : ${updateExerciseForm}`);
+    console.log(`updateExerciseData.name is : ${updatedExerciseData}`);
+
     const updatedExercise = await exerciseAPI.update(updatedExerciseData);
     const newExerciseArray = exercises.map(exercise =>
       exercise._id === updatedExercise._id ? updatedExercise : exercise
     );
     setExercises(newExerciseArray);
+    setUpdateExerciseForm(false);
   }
 
   // async function handleDeleteExercise(exerciseID) {
@@ -108,8 +114,13 @@ export default function App() {
               </Route>
               <Route path="/exercises">
                 <div className="list-and-detail">
-                <ExerciseListPanel exercises={exercises} setExercises={setExercises} activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
-                <ExerciseDetailPanel exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
+                <ExerciseListPanel 
+                  exercises={exercises} setExercises={setExercises} 
+                  activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
+                <ExerciseDetailPanel 
+                  exercises={exercises} activeExercise={activeExercise}  
+                  handleUpdateExercise={handleUpdateExercise} 
+                  updateExerciseForm={updateExerciseForm} setUpdateExerciseForm={setUpdateExerciseForm} />
                 </div>
               </Route>
               <Route exact path="/new-log">

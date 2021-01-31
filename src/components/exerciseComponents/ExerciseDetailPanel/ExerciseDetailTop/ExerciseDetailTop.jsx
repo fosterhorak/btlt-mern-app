@@ -2,8 +2,15 @@ import './ExerciseDetailTop.css';
 import Popup from 'reactjs-popup';
 import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
 
-export default function ExerciseDetailTop({activeExercise, exercises, handleUpdateExercise}) {
+export default function ExerciseDetailTop({activeExercise, exercises, handleUpdateExercise, updateExerciseForm, setUpdateExerciseForm}) {
 
+
+    async function handleUpdateExerciseButton() {
+        setUpdateExerciseForm(true);
+    }
+
+
+    
     // i want the form to update an existing exercise to pop up and replace the two detail panels if the "update" button is selected
     // must incorporate a new hook -- "updateExercise" -- into the existing ternary on this page...
 
@@ -63,7 +70,7 @@ export default function ExerciseDetailTop({activeExercise, exercises, handleUpda
                     <EditExerciseForm exercises={exercises} activeExercise={activeExercise}  handleUpdateExercise={handleUpdateExercise}/>
                 </div>
                 </Popup>  
-
+                <button onClick={handleUpdateExerciseButton} id="u"className="ud-btns">UPDATE*</button>
                 <button id="d"className="ud-btns">DELETE</button>
             </div>
             </div>

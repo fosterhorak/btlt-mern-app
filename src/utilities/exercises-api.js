@@ -38,7 +38,7 @@ export function update(exercise) {
     //     body: JSON.stringify(troll)
     // }).then(res => res.json());
 
-    return sendRequest(BASE_URL, 'PUT', exercise);
+    return sendRequest(`${BASE_URL}/${exercise._id}`, 'PUT', exercise);
 }
 
 // export function deleteOne(exerciseID) {
