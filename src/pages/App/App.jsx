@@ -4,10 +4,11 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import Aside from '../../components/Aside/Aside';
-import ExerciseLogListPanel from '../../components/LogListPanel/LogListPanel';
-import ExerciseLogDetailPanel from '../../components/Log/LogDetailPanel/LogDetailPanel';
-import ExerciseListPanel from '../../components/ExerciseListPanel/ExerciseListPanel';
-import ExerciseDetailPanel from '../../components/Exercise/ExerciseDetailPanel/ExerciseDetailPanel';
+import LogListPanel from '../../components/logComponents/LogListPanel/LogListPanel';
+import LogDetailPanel from '../../components/logComponents/LogDetailPanel/LogDetailPanel';
+import ExerciseListPanel from '../../components/exerciseComponents/ExerciseListPanel/ExerciseListPanel';
+import ExerciseDetailPanel from '../../components/exerciseComponents/ExerciseDetailPanel/ExerciseDetailPanel';
+
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 
@@ -97,10 +98,10 @@ export default function App() {
             <main>
             <Aside user={user} setUser={setUser} />
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/logs">
                 <div className="list-and-detail">
-                <ExerciseLogListPanel />
-                <ExerciseLogDetailPanel />
+                <LogListPanel />
+                <LogDetailPanel />
                 </div>
               </Route>
               <Route path="/exercises">
@@ -115,7 +116,7 @@ export default function App() {
               <Route exact path="/new-exercise">
                 <NewExerciseForm exercises={exercises} user={user} setExercises={setExercises} handleAddExercise={handleAddExercise}/>
               </Route>
-              <Redirect to="/"/>
+              <Redirect to="/logs"/>
             </Switch>
             </main>
           </>

@@ -27,9 +27,9 @@ const exerciseSchema = new Schema({
                         'Simple']
     },
     description: {type: String},    //user input
-    demoLink: {type: String},       //user input
+    demoLink: {type: String},       //user input  //ice box: deal with urls without "https://..."
     creator: {type: Schema.Types.ObjectId, ref:'User'}, //pulled from req.user
-    creatorEmail: {type: String},  //copied over on the "new exercise form" via setFormData...
+    creatorEmail: {type: String},  //also pulled from req.user
 }, {
     timestamps: true,
     //incase i need a virtual porperty
