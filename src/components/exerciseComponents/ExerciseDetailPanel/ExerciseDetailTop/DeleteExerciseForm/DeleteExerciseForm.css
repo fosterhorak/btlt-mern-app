@@ -24,7 +24,6 @@
 
 h1#delete{
     font-size: 5vh;
-    color: var(--red);
 }
 h3, h4, a {
     padding: 0px;
@@ -41,14 +40,16 @@ hr#a {
 span#act-ex {
     color: var(--blue);
 }
+span#warn {
+    color: var(--red);
+}
 
 a {
     color: var(--pale-orange);
 }
 
 p {
-    text-align: center;
-    font-size: 3vmin;
+    font-size: 4vmin;
 }
 
 .top-half {
@@ -72,7 +73,6 @@ p {
 .delete-card-body {
     display: flex;    
     flex-direction: column;
-    align-content: center;
     justify-content: center;
     overflow-y: scroll;
     height: 22.5vh;

@@ -21,76 +21,10 @@
     --light-text:  rgb(183, 183, 183);
     --medium-text:  rgb(150, 150, 150);
     --dark-text:  rgb(80, 80, 80);
-  }
-  
-  .list-title{
-    padding: 1vmin;
-    margin: 0;
-    color: var(--light-text);
-  }
-  
-  .list-panel {
-    border: 2px solid var(--light-background);
-    border-radius: 2vmin;
-    height: 90vh;
-    background-color: var(--medium-background);
-    color: var(--light-text);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2vmin 2vmin;
-    min-width: 300px;
-  
-  }
-  
-  .log-list-container {
-    border: 2px solid var(--light-background);
-    border-radius: 2vmin;
-    width: 90%;
-    height: 80vh;
-    margin-bottom: 2vh;
-    background-color: var(--dark-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding: 0%;
-    
-  }
-  
-  
-  .log-list-btns {
-    border-radius: 2vmin;
-    width: 100%;
-    height: 5vmin;
-    display: flex;
-    padding: 3px;
-    
-  }
-  
-  .list-btns {
-    width: 100%;
-    margin: 1px;
-    height: 4vmin;
-    font-size: 2vmin;
-    align-content: top;
-    padding: 1px;
-    color: var(--light-text)
-  
-  }
-  
-.list-btns:hover {
-    border: 1px solid var(--light-text);
-    background-color: var(--blue);
-    color: var(--light-text)
-  
 }
   
-.exercise-list-scroll {
-    overflow-y: scroll;
-    height: 100vh;
-    
-}
-
+ 
+  
 .log-card {
     border: 1px solid var(--purple);
     border-radius: 2vmin;

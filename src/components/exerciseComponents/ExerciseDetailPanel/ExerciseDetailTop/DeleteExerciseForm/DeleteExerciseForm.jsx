@@ -29,8 +29,9 @@ export default function DeleteExerciseForm({
 
                 <div className="delete-card-body">
                     <h3>Are you sure you want to delete <span id="act-ex">{activeExercise.name}</span>?</h3>
-                    <h3></h3>
-                    <p>WARNING: You are also  deleting ALL exercise logs for <span id="act-ex">{activeExercise.name}</span>.</p>
+                    <h3> 
+                        <span id="warn">WARNING</span>: You are also  deleting ALL exercise logs for the exercise <span id="act-ex">{activeExercise.name}</span>.
+                    </h3>
                 </div>
             </div>
             <div className="delete-form-btn-container">

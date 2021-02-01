@@ -29,7 +29,7 @@ export default function App() {
 
   
   const [logs, setLogs] = useState([]);
-  // const [activeLog, setActiveLog] = useState({});
+  const [activeLog, setActiveLog] = useState({});
 
 
 
@@ -126,7 +126,12 @@ export default function App() {
             <Switch>
               <Route exact path="/logs">
                 <div className="list-and-detail">
-                <LogListPanel />
+                <LogListPanel 
+                  logs={logs} setLogs={setLogs} 
+                  exercises={exercises} 
+                  activeLog={activeLog} setActiveLog={setActiveLog}
+                  //setDeleteExerciseForm={setDeleteExerciseForm}
+                  />
                 <LogDetailPanel />
                 </div>
               </Route>
