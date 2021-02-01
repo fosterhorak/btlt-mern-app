@@ -22,12 +22,15 @@
 }
 
 
-h1 {
-    font-size: 3vh;
+h1#delete{
+    font-size: 5vh;
+    color: var(--red);
 }
 h3, h4, a {
-    padding: 3px;
+    padding: 0px;
     margin-top: 2px;
+    margin-bottom: 0px;
+    font-size: 4vmin;
 }
 
 hr#a {
@@ -35,9 +38,8 @@ hr#a {
     border: 1px solid var(--light-background);
 }
 
-hr#b {
-    width: 100%;
-    border: 1px solid var(--medium-background);
+span#act-ex {
+    color: var(--blue);
 }
 
 a {
@@ -46,6 +48,7 @@ a {
 
 p {
     text-align: center;
+    font-size: 3vmin;
 }
 
 .top-half {
@@ -56,109 +59,68 @@ p {
     min-width: 500px;
 }
 
-.detail-card {
+.delete-card {
     margin: 2px;
-
-
 
 }
 
-.detail-card-header h1{
+.delete-card-header h1{
     color: var(--light-text);
     font-size: 4vh;
 }
 
-.detail-card-body {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+.delete-card-body {
+    display: flex;    
     flex-direction: column;
-    align-items: center;
+    align-content: center;
+    justify-content: center;
     overflow-y: scroll;
-    height: 28vh;
+    height: 22.5vh;
+    margin: 3vmin;
 
 }
 
-.detail-card-body .columnR h3, h4 {
-    color: var(--blue);
-    font-size: 3vmin;
-}
-
-.detail-card-body .columnL h3, h4 {
-    align-self: flex-start;
-    color: var(--light-text);
-    font-size: 3vmin;
-
-}
-
-.columnL {
-    padding: 0px;
-    margin-left: 4vw;
-    display: flex;
-    align-self: start;
-}
-
-
-.columnR {
-    padding: 0px;
-    margin-left: 5px;
-    text-align: left;
-    color: var(--blue);
-    margin-right: 4px;
-
-}
-
-.temp p {
-    margin: 20px 70px;
-    padding: 10px;
-}
 
 
 
-.update-delete-btn-container {
+
+.delete-form-btn-container {
     width: 100%;
     height: 6vh;
     display: flex;
     padding: 3px;
 }
 
-.ud-btns {
-    margin: 1px;
-    padding: 1px;
-    color: var(--light-text);
-    background-color: var(--dark-background);
 
-}
 
-.ud-btns#u {
+
+.cancel-del-btn {
     border: .5px solid var(--blue);
-    min-height: 20px;
-
-
-}
-.ud-btns#d {
-    border: .5px solid var(--red);
+    margin: 1px;
+    padding: 0px;
     min-height: 20px;
 
     
 
 }
-.ud-btns#u:hover {
+.cancel-del-btn:hover {
     border: .5px solid var(--dark-background);
     background-color: var(--blue);
 
 
 }
-.ud-btns#d:hover {
+.del-ex-btn {
+    border: .5px solid var(--red);
+    background-color: var(--dark-background);
+    margin: 1px;
+    padding: 0px;
+    min-height: 20px;
+
+}
+
+.del-ex-btn:hover {
     border: .5px solid var(--dark-background);
     background-color: var(--red);
-
-
 }
 
 
-.exercise-update-popup {
-    background-color: var(--dark-background);
-    margin-bottom: -5px;
-    padding: 5px;
-
-}

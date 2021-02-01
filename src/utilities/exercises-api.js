@@ -41,11 +41,12 @@ export function update(exercise) {
     return sendRequest(`${BASE_URL}/${exercise._id}`, 'PUT', exercise);
 }
 
-// export function deleteOne(exerciseID) {
-//     return fetch(`${BASE_URL}/${exerciseID}`, {
-//         method: "DELETE",
-//         headers: {
-//             "content-type": "application/json",
-//         }
-//     });
-// }
+export function deleteOne(exercise) {
+    // return fetch(`${BASE_URL}/${exerciseID}`, {
+    //     method: "DELETE",
+    //     headers: {
+    //         "content-type": "application/json",
+    //     }
+    // });
+    return sendRequest(`${BASE_URL}/${exercise._id}`, 'DELETE', exercise);
+}

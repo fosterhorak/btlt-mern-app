@@ -70,6 +70,8 @@ p {
     background-color: var(--dark-background);
     border: .5px solid var(--blue);
     color: var(--light-text);
+    min-height: 20px;
+
 }
 
 .gl-btns:hover {

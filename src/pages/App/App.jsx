@@ -25,6 +25,8 @@ export default function App() {
   const [activeExercise, setActiveExercise] = useState({});
 
   const [updateExerciseForm, setUpdateExerciseForm] = useState(false);
+  const [deleteExerciseForm, setDeleteExerciseForm] = useState(false);
+
   
   // const [logs, setLogs] = useState([]);
   // const [activeLog, setActiveLog] = useState({});
@@ -71,10 +73,15 @@ export default function App() {
     setUpdateExerciseForm(false);
   }
 
-  // async function handleDeleteExercise(exerciseID) {
-  //   await exerciseAPI.deleteOne(exerciseID);
-  //   setExercises(exercises.filter(exercise => exercise._id !== exerciseID));
-  // }
+  async function handleDeleteExercise(exercise) {
+    const exerciseID = exercise._id
+    await exerciseAPI.deleteOne(exercise);
+    setExercises(exercises.filter(exercise => exercise._id !== exerciseID));
+    // will need to also delete all logs with this exercise._id
+    // do this after exercise logs model is functioning on its own...
+    setActiveExercise({});
+    setDeleteExerciseForm(false);
+  }
 
   // ----------- FUNCTIONS FOR LOGS --------------------
   // useEffect(() => {
@@ -125,7 +132,9 @@ export default function App() {
                 <ExerciseDetailPanel 
                   exercises={exercises} activeExercise={activeExercise}  
                   handleUpdateExercise={handleUpdateExercise} 
-                  updateExerciseForm={updateExerciseForm} setUpdateExerciseForm={setUpdateExerciseForm} />
+                  updateExerciseForm={updateExerciseForm} setUpdateExerciseForm={setUpdateExerciseForm} 
+                  handleDeleteExercise={handleDeleteExercise}
+                  deleteExerciseForm={deleteExerciseForm} setDeleteExerciseForm={setDeleteExerciseForm}/>
                 </div>
               </Route>
               <Route exact path="/new-log">

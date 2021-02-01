@@ -6,7 +6,7 @@ module.exports = {
     create,
     // show,
     update,
-    // delete: deleteOne
+    delete: deleteOne
 };
 
 
@@ -40,7 +40,7 @@ async function update(req, res) {
     res.status(200).json(updatedExercise);
 }
 
-// async function deleteOne(req, res) {
-//     const deletedExercise = await Exercise.findByIdAndRemove(req.params.id);
-//     res.status(200).json(deletedExercise)
-// }
+async function deleteOne(req, res) {
+    const deletedExercise = await Exercise.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedExercise)
+}
