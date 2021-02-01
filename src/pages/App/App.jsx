@@ -128,7 +128,8 @@ export default function App() {
                 <div className="list-and-detail">
                 <ExerciseListPanel 
                   exercises={exercises} setExercises={setExercises} 
-                  activeExercise={activeExercise} setActiveExercise={setActiveExercise}/>
+                  activeExercise={activeExercise} setActiveExercise={setActiveExercise}
+                  setDeleteExerciseForm={setDeleteExerciseForm}/>
                 <ExerciseDetailPanel 
                   exercises={exercises} activeExercise={activeExercise}  
                   handleUpdateExercise={handleUpdateExercise} 

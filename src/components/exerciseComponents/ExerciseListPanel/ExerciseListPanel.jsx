@@ -23,6 +23,7 @@ export default function ExerciseListPanel(props) {
                 key={exercise._id} 
                 activeExercise={props.activeExercise} 
                 setActiveExercise={props.setActiveExercise}
+                setDeleteExerciseForm={props.setDeleteExerciseForm}
               />
               )}
             </div>
