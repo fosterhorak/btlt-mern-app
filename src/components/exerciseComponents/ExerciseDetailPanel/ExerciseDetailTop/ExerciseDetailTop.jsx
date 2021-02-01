@@ -66,7 +66,7 @@ export default function ExerciseDetailTop({
                                 <h3>DEMO URL: </h3>
                             </div>
                             <div className="columnR">
-                                <h4><a href={activeExercise.demoLink} target="_blank"> LINK </a></h4>
+                                <a id="url-demo-link" href={activeExercise.demoLink} target="_blank"> LINK </a>
                             </div>
                             </>
                             : ""}

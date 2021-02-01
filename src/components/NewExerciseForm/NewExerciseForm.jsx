@@ -6,12 +6,10 @@ export default function NewExerciseForm(props) {
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
-        category: 'Weights', 
-        logType: 'Std Lft',
+        category: '', 
+        logType: '',
         description: '',
         demoLink: '', 
-        // creatorEmail: `${props.user.email}`,
-        // creator: `${props.user._id}`,
     })
     
     const formRef = useRef();
@@ -61,6 +59,7 @@ export default function NewExerciseForm(props) {
                     value={formData.category}
                     onChange={handleChange}
                     required>
+                    <option value=""></option>
                     <option value="Weights">WEIGHTS</option>
                     <option value="Kettlebells">KETTLEBELLS</option>
                     <option value="Body Weight">BODY WEIGHT</option>
@@ -83,15 +82,15 @@ export default function NewExerciseForm(props) {
                         <h2>Metrics tracked for each Log Type are shown below...</h2> 
                         <ul>
                             <li><strong>Std Lft:</strong>   weight, reps, sets, rest interval (optional), *calculates volume</li>
-                            <li><strong> Body Wt:</strong>   reps, sets, rest interval (optional), *calculates volume</li>
-                            <li><strong> EMOM(std):</strong>   time, number of rounds, reps per round, *calculates volume</li>
-                            <li><strong> EMOM(wtd):</strong>   weight, time, number of rounds, reps per round, *calculates volume</li>
-                            <li><strong> AMRAP(std):</strong>   time cap, number of reps</li>
-                            <li><strong> AMRAP(wtd):</strong>   weight, time cap, number of rep</li>
-                            <li><strong> RepsForTime(std):</strong>   number of reps, time</li>
-                            <li><strong> RepsForTime(wtd):</strong>   weight, number of reps, time</li>
-                            <li><strong> Cardio:</strong>  distance,  time, avg speed</li>
-                            <li><strong> Simple:</strong>   completed(y/n)</li>
+                            <li><strong>Body Wt:</strong>   reps, sets, rest interval (optional), *calculates volume</li>
+                            <li><strong>EMOM(std):</strong>   time, number of rounds, reps per round, *calculates volume</li>
+                            <li><strong>EMOM(wtd):</strong>   weight, time, number of rounds, reps per round, *calculates volume</li>
+                            <li><strong>AMRAP(std):</strong>   time cap, number of reps</li>
+                            <li><strong>AMRAP(wtd):</strong>   weight, time cap, number of rep, *calculates volume</li>
+                            <li><strong>RepsForTime(std):</strong>   number of reps, time</li>
+                            <li><strong>RepsForTime(wtd):</strong>   weight, number of reps, time</li>
+                            <li><strong>Cardio:</strong>  distance,  time, avg speed</li>
+                            <li><strong>Simple:</strong>   completed(y/n)</li>
                         </ul>
                         <small className="close-popup-msg">[CLICK AWAY TO CLOSE]</small>
                     </div>
@@ -105,6 +104,7 @@ export default function NewExerciseForm(props) {
                     value={formData.logType}
                     onChange={handleChange}
                     required>
+                    <option value=""></option>
                     <option value="Std Lft">Std Lft</option>
                     <option value="Body Wt">Body Wt</option>
                     <option value="EMOM(std)">EMOM(std)</option>

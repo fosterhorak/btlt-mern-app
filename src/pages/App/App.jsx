@@ -28,7 +28,7 @@ export default function App() {
   const [deleteExerciseForm, setDeleteExerciseForm] = useState(false);
 
   
-  // const [logs, setLogs] = useState([]);
+  const [logs, setLogs] = useState([]);
   // const [activeLog, setActiveLog] = useState({});
 
 
@@ -84,18 +84,24 @@ export default function App() {
   }
 
   // ----------- FUNCTIONS FOR LOGS --------------------
-  // useEffect(() => {
-  //   async function getLogs(){
-  //     const logs = await logAPI.getAll();
-  //     setLogs(logs);
-  //   }
-  //   getLogs();
-  // }, [])
+  useEffect(() => {
+    async function getLogs(){
+      const logs = await logAPI.getAll();
+      setLogs(logs);
+    }
+    if (user) getLogs();
+    else {
+      setLogs([]);
+      // setActiveLog({});
+      // setUpdateLogForm(false);
+    }
+  }, [user])
 
-  // async function handleAddLog(newLogData) {
-  //   const newLog = await logAPI.create(newLogData);
-  //   setLogs([...logs, newLog]);
-  // }
+  async function handleAddLog(newLogData) {
+    const newLog = await logAPI.create(newLogData);
+    setLogs([...logs, newLog]);
+  }
+
 
   // async function handleUpdateLog(updatedLogData) {
   //   const updatedLog = await logAPI.update(updatedLogData);
@@ -139,7 +145,7 @@ export default function App() {
                 </div>
               </Route>
               <Route exact path="/new-log">
-                <NewLogForm />
+                <NewLogForm exercises={exercises} logs={logs} user={user} setLogs={setLogs} handleAddLog={handleAddLog} />
               </Route>
               <Route exact path="/new-exercise">
                 <NewExerciseForm exercises={exercises} user={user} setExercises={setExercises} handleAddExercise={handleAddExercise}/>

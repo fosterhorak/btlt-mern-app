@@ -30,6 +30,7 @@ h3, h4, a {
     margin-top: 2px;
 }
 
+
 hr#a {
     width: 85%;
     border: 1px solid var(--light-background);
@@ -40,8 +41,10 @@ hr#b {
     border: 1px solid var(--medium-background);
 }
 
-a {
+a#url-demo-link {
     color: var(--pale-orange);
+    font-size: 3vmin;
+
 }
 
 p {
