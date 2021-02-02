@@ -90,8 +90,8 @@ export default function SimpleLogUpdateForm(props) {
                     onChange={handleChange}
                     id="new-log"
                     required>
-                    <option value="true">TRUE</option>
-                    <option value="false" >FALSE</option>
+                    <option value='true'>TRUE</option>
+                    <option value='false' >FALSE</option>
                 </select>
                 </div>
             

@@ -84,7 +84,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
         {/* if log.logType is Simple --> i want to see "complete" */}
           { log.exerciseLogType === ('Simple') && (
             <>
-              <h3 className="b" id="p" >{log.exerciseData.complete ? 'COMPLETED' : "DID NOT COMPLETE"}</h3>
+              <h3 className="b" id="p" >{ log.exerciseData.complete==='true' ? 'COMPLETED' : "DID NOT COMPLETE"}</h3>
             </>
           )}  
         </div>        
