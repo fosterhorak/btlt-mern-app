@@ -1,5 +1,6 @@
 import './LogListCard.css';
 import {Link} from 'react-router-dom';
+import { PromiseProvider } from 'mongoose';
 
 
 
@@ -20,8 +21,9 @@ export default function LogListCard({
   return (
     <>
         <div onClick={handleClick} className={log === activeLog ? "log-card selected" : "log-card"}>
-            <h1 className="card-title" >EXERCISE NAME</h1> 
-            <p className="b"><span > DATE | VARIABLE DATA </span></p>
+            <h1 className="card-title" >LOG ID: {log._id}</h1> 
+            <h3 className="b">LOG NOTES: {log.notes}</h3>
+            <h3 className="b">DATETIME: {log.dateTime}</h3>
         </div>
 
     </>

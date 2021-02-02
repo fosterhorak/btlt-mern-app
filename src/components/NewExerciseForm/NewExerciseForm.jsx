@@ -20,7 +20,7 @@ export default function NewExerciseForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleAddExercise(formData);
+        props.handleAddExercise(formData);        
     }
     
     const handleChange = (e) => {

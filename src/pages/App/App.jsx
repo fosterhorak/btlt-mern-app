@@ -10,6 +10,7 @@ import ExerciseListPanel from '../../components/exerciseComponents/ExerciseListP
 import ExerciseDetailPanel from '../../components/exerciseComponents/ExerciseDetailPanel/ExerciseDetailPanel';
 
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
+import NewLogTestForm from '../../components/NewLogTestForm/NewLogTestForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 
 import * as exerciseAPI from '../../utilities/exercises-api';
@@ -36,9 +37,9 @@ export default function App() {
 
   const history = useHistory();
 
-  useEffect(() => {
-    history.push("/")
-  }, [exercises, history])
+  // useEffect(() => {
+  //   history.push("/")
+  // }, [exercises, history])
 
   // ----------- FUNCTIONS FOR EXERCISES --------------------
   useEffect(() => {
@@ -57,6 +58,7 @@ export default function App() {
   async function handleAddExercise(newExerciseData) {
     const newExercise = await exerciseAPI.create(newExerciseData);
     setExercises([...exercises, newExercise]);
+    history.push('/exercises');
   }
 
   async function handleUpdateExercise(updatedExerciseData) {
@@ -81,6 +83,7 @@ export default function App() {
     // do this after exercise logs model is functioning on its own...
     setActiveExercise({});
     setDeleteExerciseForm(false);
+    history.push('/exercises');
   }
 
   // ----------- FUNCTIONS FOR LOGS --------------------
@@ -98,8 +101,10 @@ export default function App() {
   }, [user])
 
   async function handleAddLog(newLogData) {
+    // will need to manipulate newLogData to put into a format that will work for my Log Model... (here or on my controller?? or elsewhere?)
     const newLog = await logAPI.create(newLogData);
     setLogs([...logs, newLog]);
+    history.push('/logs');
   }
 
 
@@ -114,6 +119,7 @@ export default function App() {
   // async function handleDeleteLog(logID) {
   //   await logAPI.deleteOne(logID);
   //   setLogs(logs.filter(log => log._id !== logID));
+  //   history.push('/logs');
   // }
 
 
