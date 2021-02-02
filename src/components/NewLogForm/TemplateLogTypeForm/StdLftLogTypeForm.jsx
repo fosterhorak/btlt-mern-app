@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import './TemplateLogTypeForm.css';
 
 // props needed = selectedExercise
-export default function TemplateLogTypeForm(props) {
+export default function StdLftLogTypeForm(props) {
 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
@@ -30,6 +30,12 @@ export default function TemplateLogTypeForm(props) {
         formRef.current.checkValidity() ? setInvalidForm(false) : setInvalidForm(true);
     }, [formData]);
 
+    useEffect(() => {
+        let w = formData.weight;
+        let r = formData.reps;
+        let s = formData.sets;
+        if (w && r && s) formData.volCalc = w*r*s;
+    }, [formData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -136,120 +142,6 @@ export default function TemplateLogTypeForm(props) {
                     />
                 </div>
 
-                <div className="form-groupL">
-                <label><strong><h5>TIME</h5></strong></label>
-                </div>
-                <div className="form-groupR">
-                    <input 
-                    type="text"
-                    className="html-duration-picker form-control" 
-                    data-duration="00:00:00"
-                    name="time" 
-                    value={formData.time} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required
-                    />
-                </div>
-
-                <div className="form-groupL">
-                <label><strong><h5>NUMBER OF ROUNDS</h5></strong></label>
-                </div>
-                <div className="form-groupR">
-                    <input 
-                    type="number"
-                    step="1"
-                    className="form-control" 
-                    name="numRds" 
-                    value={parseInt(formData.numRds)} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required
-                    />
-                </div>
-
-                <div className="form-groupL">
-                <label><strong><h5>REPS PER ROUND</h5></strong></label>
-                </div>
-                <div className="form-groupR">
-                    <input 
-                    type="number"
-                    step="1"
-                    className="form-control" 
-                    name="repsPerRd" 
-                    value={parseInt(formData.repsPerRd)} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required
-                    />
-                </div>
-
-                <div className="form-groupL">
-                <label><strong><h5>TIME CAP</h5></strong></label>
-                </div>
-                <div className="form-groupR">
-                    <input 
-                    type="text"
-                    className="html-duration-picker form-control" 
-                    data-duration="00:00:00"
-                    name="timeCap" 
-                    value={formData.timeCap} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required
-                    />
-                </div>
-
-                <div className="form-groupL">
-                <label><strong><h5>DISTANCE</h5></strong></label>
-                <p>Make sure you're using the same units you have on previous logs. </p>
-                </div>
-                <div className="form-groupR">
-                    <input 
-                    type="number"
-                    step="1"
-                    className="form-control" 
-                    name="distance" 
-                    value={parseInt(formData.distance)} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required
-                    />
-                </div>
-                
-                <div className="form-groupL">
-                <label><strong><h5>COMPLETED</h5></strong></label>
-                </div>
-                <div className="form-groupR">
-                <select 
-                    className="form-control" 
-                    name="complete" 
-                    value={formData.complete} 
-                    onChange={handleChange}
-                    id="new-log"
-                    required>
-                    <option value="true">TRUE</option>
-                    <option value="false" >FALSE</option>
-                </select>
-                </div>
-            
-                <div className="form-groupL">
-                <label><strong><h5>CALCULATED AVG. SPEED</h5></strong></label>
-                </div>
-                <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
-                >
-                <label id="calc"><strong><h5 id="purp">AVG SPEED</h5></strong></label>
-                </div>
-
-                <div className="form-groupL">
-                <label><strong><h5>CALCULATED TOTAL REPS</h5></strong></label>
-                </div>
-                <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
-                >
-                <label id="calc"><strong><h5 id="purp">TOTAL REPS</h5></strong></label>
-                </div>
 
                 <div className="form-groupL">
                 <label><strong><h5>CALCULATED VOLUME</h5></strong></label>
@@ -257,7 +149,7 @@ export default function TemplateLogTypeForm(props) {
                 <div className="form-groupR"
                 // will need to set calculate these as hooks or in useEffect functions above...
                 >
-                <label id="calc"><strong><h5 id="purp">VOLUME</h5></strong></label>
+                <label id="calc"><strong><h5 id="purp">{formData.volCalc ? formData.volCalc : "Enter WEIGHT, REPS, & SETS to calculate..."}</h5></strong></label>
                 </div>
             
 

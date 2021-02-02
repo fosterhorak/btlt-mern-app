@@ -1,6 +1,16 @@
 import React, {useState, useRef, useEffect} from 'react';
 import './NewLogForm.css';
 import TemplateLogTypeForm from './TemplateLogTypeForm/TemplateLogTypeForm';
+import StdLftLogTypeForm from './TemplateLogTypeForm/StdLftLogTypeForm';
+import BodyWtLogTypeForm from './TemplateLogTypeForm/BodyWtLogTypeForm';
+import EmomStdLogTypeForm from './TemplateLogTypeForm/EmomStdLogTypeForm';
+import EmomWtdLogTypeForm from './TemplateLogTypeForm/EmomWtdLogTypeForm';
+import AmrapWtdLogTypeForm from './TemplateLogTypeForm/AmrapWtdLogTypeForm';
+import AmrapStdLogTypeForm from './TemplateLogTypeForm/AmrapStdLogTypeForm';
+import RftWtdLogTypeForm from './TemplateLogTypeForm/RftWtdLogTypeForm';
+import RftStdLogTypeForm from './TemplateLogTypeForm/RftStdLogTypeForm';
+import CardioLogTypeForm from './TemplateLogTypeForm/CardioLogTypeForm';
+import SimpleLogTypeForm from './TemplateLogTypeForm/SimpleLogTypeForm';
 
 
 export default function NewLogForm(props) {
@@ -23,7 +33,7 @@ export default function NewLogForm(props) {
                 required>
                   <option value=""></option>
                   {props.exercises.map((exercise, idx) => (
-                    <option value={idx}>{exercise.name}</option>
+                    <option value={idx} key={exercise._id} >{exercise.name} </option>
                   ))};
               </select>
           </div>
@@ -31,22 +41,65 @@ export default function NewLogForm(props) {
 
         { exerciseSelection && (
           <>
-          {/* { exerciseSelection.logType === 'Std Lft' ? <StdLiftForm /> : ''};
-          { exerciseSelection.logType === 'Body Wt' ? <BodyWtForm /> : ''};
-          { exerciseSelection.logType === 'EMOM(std)' ? <EMOMstdForm /> : ''};
-          { exerciseSelection.logType === 'EMOM(wtd)' ? <EMOMwtdForm /> : ''};
-          { exerciseSelection.logType === 'AMRAP(std)' ? <AMRAPstdForm /> : ''};
-          { exerciseSelection.logType === 'AMRAP(wtd)' ? <AMRAPwtdForm /> : ''};
-          { exerciseSelection.logType === 'RepsForTime(std)' ? <RepsForTimestdForm /> : ''};
-          { exerciseSelection.logType === 'RepsForTime(wtd)' ? <RepsForTimewtdForm /> : ''};
-          { exerciseSelection.logType === 'Cardio' ? <CardioForm /> : ''};
-          { exerciseSelection.logType === 'Simple' ? <SimpleForm /> : ''}; 
+            { exerciseSelection.logType === 'Std Lft' && (
+              <>
+                <StdLftLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+            { exerciseSelection.logType === 'Body Wt' && (
+              <>
+                <BodyWtLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+            { exerciseSelection.logType === 'EMOM(std)' && (
+              <>
+                <EmomStdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
 
-                went ahead and stubbed up all form inputs below...
-          */}
+            
+            { exerciseSelection.logType === 'EMOM(wtd)' && (
+              <>
+                <EmomWtdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
 
-            <TemplateLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
-          
+            { exerciseSelection.logType === 'AMRAP(wtd)' && (
+              <>
+                <AmrapWtdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+
+            { exerciseSelection.logType === 'AMRAP(std)' && (
+              <>
+                <AmrapStdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+
+            { exerciseSelection.logType === 'RepsForTime(wtd)' && (
+              <>
+                <RftWtdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+            { exerciseSelection.logType === 'RepsForTime(std)' && (
+              <>
+                <RftStdLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+
+            { exerciseSelection.logType === 'Cardio' && (
+              <>
+                <CardioLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+
+            
+            { exerciseSelection.logType === 'Simple' && (
+              <>
+                <SimpleLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
+              </>
+            )}
+
           </>
         )}
       </div>
