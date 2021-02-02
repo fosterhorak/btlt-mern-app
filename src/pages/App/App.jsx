@@ -10,12 +10,12 @@ import ExerciseListPanel from '../../components/exerciseComponents/ExerciseListP
 import ExerciseDetailPanel from '../../components/exerciseComponents/ExerciseDetailPanel/ExerciseDetailPanel';
 
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
-import NewLogTestForm from '../../components/NewLogTestForm/NewLogTestForm';
+// import NewLogTestForm from '../../components/NewLogTestForm/NewLogTestForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
 
 import * as exerciseAPI from '../../utilities/exercises-api';
 import * as logAPI from '../../utilities/logs-api';
-import UpdateExerciseForm from '../../components/exerciseComponents/ExerciseDetailPanel/UpdateExerciseForm/UpdateExerciseForm';
+// import UpdateExerciseForm from '../../components/exerciseComponents/ExerciseDetailPanel/UpdateExerciseForm/UpdateExerciseForm';
 
 
 
@@ -32,6 +32,8 @@ export default function App() {
   const [logs, setLogs] = useState([]);
   const [activeLog, setActiveLog] = useState({});
 
+  const [updateLogForm, setUpdateLogForm] = useState(false);
+  const [deleteLogForm, setDeleteLogForm] = useState(false);
 
 
 
@@ -136,9 +138,19 @@ export default function App() {
                   logs={logs} setLogs={setLogs} 
                   exercises={exercises} 
                   activeLog={activeLog} setActiveLog={setActiveLog}
-                  //setDeleteExerciseForm={setDeleteExerciseForm}
+                  setDeleteLogForm={setDeleteLogForm}
                   />
-                <LogDetailPanel />
+                <LogDetailPanel 
+                  exercises={exercises}  
+                  logs={logs} activeLog={activeLog}  
+
+                  // handleUpdateLog={handleUpdateLog} 
+                  // updateLogForm={updateLogForm} setUpdateLogForm={setUpdateLogForm} 
+
+                  // handleDeleteLog={handleDeleteLog}
+                  // deleteLogForm={deleteLogForm} setDeleteLogForm={setDeleteLogForm}
+
+                />
                 </div>
               </Route>
               <Route path="/exercises">

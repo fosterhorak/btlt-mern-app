@@ -7,7 +7,7 @@ export default function CardioLogTypeForm(props) {
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
         dateTime: '', 
-        exerciseObj: {}, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
         weight: '',
         reps: '',
         sets: '', 
@@ -79,7 +79,7 @@ export default function CardioLogTypeForm(props) {
 
                 <div className="form-groupL">
                 <label><strong><h5>DISTANCE</h5></strong></label>
-                <p>Make sure you're using the same units you have on previous logs. </p>
+                <p>Use the same distance metric (d) for each log of this exercise (ex: miles, km, laps, ect.) </p>
                 </div>
                 <div className="form-groupR">
                     <input 
@@ -96,7 +96,7 @@ export default function CardioLogTypeForm(props) {
 
 
                 <div className="form-groupL">
-                <label><strong><h5>TIME</h5></strong></label>
+                <label><strong><h5>TIME (minutes)</h5></strong></label>
                 </div>
                 <div className="form-groupR">
                     <input 
@@ -118,7 +118,7 @@ export default function CardioLogTypeForm(props) {
                 <div className="form-groupR"
                 // will need to set calculate these as hooks or in useEffect functions above...
                 >
-                <label id="calc"><strong><h5 id="purp">{formData.avgSpeed ? formData.avgSpeed.toFixed(2) : "Enter DISTANCE & TIME to calculate..."}</h5></strong></label>
+                <label id="calc"><strong><h5 id="purp">{formData.avgSpeed ? `${formData.avgSpeed.toFixed(2)} (d)/min -- OR -- ${(formData.avgSpeed*60).toFixed(2)} (d)/hr` : "Enter DISTANCE & TIME to calculate..."}</h5></strong></label>
                 </div>
 
 

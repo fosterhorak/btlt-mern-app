@@ -23,8 +23,8 @@ async function create(req, res) {
     req.body.creator = req.user._id;
     req.body.creatorEmail = req.user.email;
     const exercise = await Exercise.create(req.body);
-    console.log(`req.user: ${req.user}`);
-    console.log(`exercise: ${exercise}`);
+    // console.log(`req.user: ${req.user}`);
+    // console.log(`exercise: ${exercise}`);
     res.status(201).json(exercise);
 }
 

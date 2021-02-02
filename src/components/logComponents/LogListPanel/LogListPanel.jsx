@@ -21,27 +21,12 @@ export default function LogListPanel(props) {
                   <LogListCard 
                     log={log} 
                     key={log._id} 
-                    // exercises={props.exercises}
-                    // activeLog={props.activeLog} 
-                    // setActiveLog={props.setActiveLog}
-                    // setDeleteLogForm={props.setDeleteLogForm}
+                    exercises={props.exercises}
+                    activeLog={props.activeLog} 
+                    setActiveLog={props.setActiveLog}
+                    setDeleteLogForm={props.setDeleteLogForm}
                   />
-                )}
-
-                {/* delete cards below...  just done for devo purposes*/}
-
-                <div className="log-card"//{log === activeLog ? "log-card selected" : "log-card"}>
-                  >
-                  <h1 className="card-title" >EXERCISE NAME</h1> 
-                  <p className="b"><span > DATE | WT | VOLUME </span></p>
-                </div>
-                <div className="log-card"//{log === activeLog ? "log-card selected" : "log-card"}>
-                  >
-                  <h1 className="card-title" >EXERCISE NAME</h1> 
-                  <p className="b"><span > DATE | WT | VOLUME </span></p>
-                </div>
-              
-              
+                )}              
               </div>
             
             </div>

@@ -7,7 +7,7 @@ export default function SimpleLogTypeForm(props) {
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
         dateTime: '', 
-        exerciseObj: {}, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
         weight: '',
         reps: '',
         sets: '', 
