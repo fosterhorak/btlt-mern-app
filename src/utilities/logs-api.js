@@ -16,21 +16,11 @@ export function create(log) {
     return sendRequest(BASE_URL, 'POST', log);
 }
 
-// export function update(log) {
-//     return fetch(`${BASE_URL}/${log._id}`, {
-//         method: "PUT",
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         body: JSON.stringify(log)
-//     }).then(res => res.json());
-// }
+export function update(log) {
+    return sendRequest(`${BASE_URL}/${log._id}`, 'PUT', log);
+    
+}
 
-// export function deleteOne(logID) {
-//     return fetch(`${BASE_URL}/${logID}`, {
-//         method: "DELETE",
-//         headers: {
-//             "content-type": "application/json",
-//         }
-//     });
-// }
+export function deleteOne(log) {
+    return sendRequest(`${BASE_URL}/${log._id}`, 'DELETE', log);
+}

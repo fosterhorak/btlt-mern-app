@@ -12,10 +12,9 @@ module.exports = {
 
 async function index(req, res) {
     // const exercises = await Exercise.find({});
-    
     console.log(`req.user is equal to... ${req.user}`);
+    
     const exercises = await Exercise.find({creator: req.user._id});
-
     res.status(200).json(exercises);
 }
 

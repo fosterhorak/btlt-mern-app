@@ -4,8 +4,8 @@ module.exports = {
     index,
     create,
     // show,
-    // update,
-    // delete: deleteOne
+    update,
+    delete: deleteOne
 };
 
 
@@ -55,14 +55,14 @@ async function create(req, res) {
 //     res.status(200).json(log);
 // }
 
-// async function update(req, res) {
-//     const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, {
-//         new: true
-//     });
-//     res.status(200).json(updatedLog);
-// }
+async function update(req, res) {
+    const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    });
+    res.status(200).json(updatedLog);
+}
 
-// async function deleteOne(req, res) {
-//     const deletedLog = await Log.findByIdAndRemove(req.params.id);
-//     res.status(200).json(deletedLog)
-// }
+async function deleteOne(req, res) {
+    const deletedLog = await Log.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedLog)
+}

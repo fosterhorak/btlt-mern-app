@@ -19,26 +19,26 @@ export default function LogLogDetailPanel({
 
     return (
       <>
-        { activeExercise.name ? 
+        { activeLog._id ? 
           <div className="detail-container">
             
-            { updateExerciseForm ? 
-              <UpdateExerciseForm 
-                handleUpdateExercise={handleUpdateExercise} 
-                activeExercise={activeExercise} 
-                setUpdateExerciseForm={setUpdateExerciseForm} /> 
+            { updateLogForm ? 
+              <UpdateLogForm 
+                handleUpdateLog={handleUpdateLog} 
+                activeLog={activeLog} 
+                setUpdateLogForm={setUpdateLogForm} /> 
             :
               <>
-              <ExerciseDetailTop 
-                activeExercise={activeExercise} exercises={exercises} 
-                updateExerciseForm={updateExerciseForm} setUpdateExerciseForm={setUpdateExerciseForm}
-                handleDeleteExercise={handleDeleteExercise}
-                deleteExerciseForm={deleteExerciseForm} setDeleteExerciseForm={setDeleteExerciseForm}
+              <LogDetailTop 
+                activeLog={activeLog} logs={logs} exercises={exercises}
+                updateLogForm={updateLogForm} setUpdateLogForm={setUpdateLogForm}
+                handleDeleteLog={handleDeleteLog}
+                deleteLogForm={deleteLogForm} setDeleteLogForm={setDeleteLogForm}
                 />
               
               <hr id="b"/>
 
-              <ExerciseDetailBottom />
+              <LogDetailBottom />
               </>
             }
           </div>

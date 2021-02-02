@@ -78,7 +78,7 @@ export default function App() {
   }
 
   async function handleDeleteExercise(exercise) {
-    const exerciseID = exercise._id
+    const exerciseID = exercise._id;
     await exerciseAPI.deleteOne(exercise);
     setExercises(exercises.filter(exercise => exercise._id !== exerciseID));
     // will need to also delete all logs with this exercise._id
@@ -97,32 +97,36 @@ export default function App() {
     if (user) getLogs();
     else {
       setLogs([]);
-      // setActiveLog({});
-      // setUpdateLogForm(false);
+      setActiveLog({});
+      setUpdateLogForm(false);
     }
   }, [user])
 
   async function handleAddLog(newLogData) {
-    // will need to manipulate newLogData to put into a format that will work for my Log Model... (here or on my controller?? or elsewhere?)
     const newLog = await logAPI.create(newLogData);
     setLogs([...logs, newLog]);
     history.push('/logs');
   }
 
 
-  // async function handleUpdateLog(updatedLogData) {
-  //   const updatedLog = await logAPI.update(updatedLogData);
-  //   const newLogArray = logs.map(log =>
-  //     log._id === updatedLog._id ? updatedLog : log
-  //   );
-  //   setLogs(newLogArray);
-  // }
+  async function handleUpdateLog(updatedLogData) {
+    const updatedLog = await logAPI.update(updatedLogData);
+    const newLogArray = logs.map(log =>
+      log._id === updatedLog._id ? updatedLog : log
+    );
+    setLogs(newLogArray);
+    setActiveLog(updatedLog);
+    setUpdateLogForm(false);
+  }
 
-  // async function handleDeleteLog(logID) {
-  //   await logAPI.deleteOne(logID);
-  //   setLogs(logs.filter(log => log._id !== logID));
-  //   history.push('/logs');
-  // }
+  async function handleDeleteLog(log) {
+    const logID = log._id;
+    await logAPI.deleteOne(log);
+    setLogs(logs.filter(log => log._id !== logID));
+    setActiveLog({});
+    setDeleteLogForm(false);
+    history.push('/logs');
+  }
 
 
   return (
@@ -143,12 +147,10 @@ export default function App() {
                 <LogDetailPanel 
                   exercises={exercises}  
                   logs={logs} activeLog={activeLog}  
-
-                  // handleUpdateLog={handleUpdateLog} 
-                  // updateLogForm={updateLogForm} setUpdateLogForm={setUpdateLogForm} 
-
-                  // handleDeleteLog={handleDeleteLog}
-                  // deleteLogForm={deleteLogForm} setDeleteLogForm={setDeleteLogForm}
+                  handleUpdateLog={handleUpdateLog} 
+                  updateLogForm={updateLogForm} setUpdateLogForm={setUpdateLogForm} 
+                  handleDeleteLog={handleDeleteLog}
+                  deleteLogForm={deleteLogForm} setDeleteLogForm={setDeleteLogForm}
 
                 />
                 </div>
