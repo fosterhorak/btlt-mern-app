@@ -32,12 +32,14 @@ h1#new-log-title {
 }
 div#new-log {
     border: 3px solid var(--purple);
+    justify-content: flex-start;
 }
 
 form#new-log {
     overflow-y: scroll;
     height: 70vh;
     width: 100%;
+
 }
 form#new-log-start {
     overflow-y: scroll;

@@ -48,7 +48,7 @@ export default function NewLogForm(props) {
             <TemplateLogTypeForm exerciseSelection={exerciseSelection} handleAddLog={props.handleAddLog}/>
           
           </>
-        )}; 
+        )}
       </div>
     </>
   )}
