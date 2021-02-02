@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './LogDetailPanel.css';
 import LogDetailTop from './LogDetailTop/LogDetailTop';
 import LogDetailBottom from './LogDetailBottom/LogDetailBottom';
@@ -15,6 +16,21 @@ export default function LogLogDetailPanel({
 
 }) {
 
+
+  const [targetExercise, setTargetExercise] = useState({});
+
+  useEffect(() => {
+    console.log(`useEffect on log detail panel is running...`);
+
+    if (activeLog._id) {
+      const target = exercises.find(e => e._id === activeLog.exerciseID);
+      console.log(`target: ${target}`);
+      console.log(`target.name: ${target.name}`);
+      setTargetExercise(target);           
+    };
+
+  }, [exercises, activeLog])
+
 // If the UpdateLogForm is up, and I click on a new log, I want to see the UpdateLogForm for the new active log...
 
     return (
@@ -26,7 +42,9 @@ export default function LogLogDetailPanel({
               <UpdateLogForm 
                 handleUpdateLog={handleUpdateLog} 
                 activeLog={activeLog} 
-                setUpdateLogForm={setUpdateLogForm} /> 
+                setUpdateLogForm={setUpdateLogForm} 
+                targetExercise={targetExercise} 
+                /> 
             :
               <>
               <LogDetailTop 
@@ -34,6 +52,7 @@ export default function LogLogDetailPanel({
                 updateLogForm={updateLogForm} setUpdateLogForm={setUpdateLogForm}
                 handleDeleteLog={handleDeleteLog}
                 deleteLogForm={deleteLogForm} setDeleteLogForm={setDeleteLogForm}
+                targetExercise={targetExercise} 
                 />
               
               <hr id="b"/>

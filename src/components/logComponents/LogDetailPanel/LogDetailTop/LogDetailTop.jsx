@@ -7,6 +7,7 @@ export default function LogDetailTop({
     updateLogForm, setUpdateLogForm,
     handleDeleteLog,
     deleteLogForm, setDeleteLogForm,
+    targetExercise,
 }) {
 
 
@@ -34,7 +35,7 @@ export default function LogDetailTop({
                 <>
                     <div className="detail-card">
                         <div className="detail-card-header">
-                        <h1>EXERCISENAME #{activeLog._id.slice(-4)}</h1>
+                        <h1>{targetExercise.name} #{activeLog._id.slice(-4)}</h1>
                         <hr id="a"/>
                         </div>
                         <div className="detail-card-body">
@@ -50,7 +51,7 @@ export default function LogDetailTop({
                             <h3>EXERCISE CATEGORY: </h3>
                             </div>
                             <div className="columnR">
-                            <h3>{activeLog.exerciseID}</h3>
+                            <h3>{targetExercise.category}</h3>
                             </div>
 
                             <div className="columnL">

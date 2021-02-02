@@ -52,8 +52,8 @@ h1.card-title {
     font-size: 3vmin;
 }
 
-.b {
-    color: var(--blue);
+.b#p{
+    color: var(--purple);
     font-size: 1.5vh;
     margin:0px .3vmin .3vmin .3vmin;
 
@@ -63,4 +63,10 @@ div.selected {
     background-color: var(--medium-background);
     border: 1px solid var(--pale-orange);
 
+}
+
+.log-metrics {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
 }

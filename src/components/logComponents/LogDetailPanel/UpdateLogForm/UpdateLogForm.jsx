@@ -15,7 +15,7 @@ import SimpleLogUpdateForm from './UpdateLogFormTemplates/SimpleLogUpdateForm';
 
 
 
-export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLogForm }) {
+export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLogForm, targetExercise  }) {
     // const location = useLocation();
     
     // hook updateExerciseFrom to false...
@@ -33,10 +33,10 @@ export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLog
             <h1 className="update-form">UPDATE LOG</h1> 
             <form id="new-log-start" autoComplete="off" >
                 <div className="form-groupL">
-                    <label> <strong>EXERCISENAME #({activeLog._id.slice(-4)})</strong> </label>
+                    <label> <strong> <h3>{targetExercise.name} #({activeLog._id.slice(-4)})</h3></strong> </label>
                 </div>
                 <div className="form-groupR">
-                    <label> <h3>EXERCISE CAT</h3> </label>
+                    <label><strong>{targetExercise.category}</strong></label>
                 </div>
             </form>
             
