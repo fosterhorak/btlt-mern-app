@@ -128,6 +128,18 @@ export default function App() {
     history.push('/logs');
   }
 
+  //delete many logs (when i delete an exercise)
+  //pass in a list of logs to delete... (list of objects? or log_ids?)
+  // async function handleDeleteManyLogs(logsToDelete) {
+  //   const logID = log._id;
+  //   await logAPI.deleteOne(log);
+  //   setLogs(logs.filter(log => log._id !== logID));
+  //   setActiveLog({});
+  //   setDeleteLogForm(false);
+  //   history.push('/logs');
+  // }
+
+
 
   return (
     <div className="App">

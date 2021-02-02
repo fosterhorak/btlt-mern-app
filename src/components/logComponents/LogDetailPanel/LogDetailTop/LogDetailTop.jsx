@@ -34,11 +34,18 @@ export default function LogDetailTop({
                 <>
                     <div className="detail-card">
                         <div className="detail-card-header">
-                        <h1>EXERCISE NAME {activeLog._id}</h1>
+                        <h1>EXERCISENAME #{activeLog._id.slice(-4)}</h1>
                         <hr id="a"/>
                         </div>
                         <div className="detail-card-body">
 
+                            <div className="columnL">
+                            <h3>DATE: </h3>
+                            </div>
+                            <div className="columnR">
+                            <h3>{activeLog.dateTime}</h3>
+                            </div>
+                            
                             <div className="columnL">
                             <h3>EXERCISE CATEGORY: </h3>
                             </div>

@@ -10,7 +10,7 @@ module.exports = {
 
 
 async function index(req, res) {
-    const logs = await Log.find({});
+    const logs = await Log.find({userId: req.user._id});
     res.status(200).json(logs);
 }
 
