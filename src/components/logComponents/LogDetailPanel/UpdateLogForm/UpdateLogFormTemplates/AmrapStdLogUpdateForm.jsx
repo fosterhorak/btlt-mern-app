@@ -1,27 +1,28 @@
 import React, {useState, useRef, useEffect} from 'react';
-import './TemplateLogTypeForm.css';
+import './TemplateLogUpdateForm.css';
 
 // props needed = selectedExercise
-export default function RftStdLogTypeForm(props) {
+export default function AmrapStdLogUpdateForm(props) {
 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        dateTime: null, 
-        exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
-        weight: null,
-        reps: null,
-        sets: null, 
-        restInt: null,
-        volCalc: null,
-        totReps: null,
-        time: null,
-        numRds: null,
-        repsPerRd: null,
-        timeCap: null,
-        distance: null,
-        avgSpeed: null,
-        complete: 'true', 
-        notes: null,
+        _id: props.activeLog._id,
+        dateTime: props.activeLog.dateTime, // doesn't work??
+        exerciseObj: props.activeLog, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        weight: props.activeLog.exerciseData.weight,
+        reps: props.activeLog.exerciseData.reps,
+        sets: props.activeLog.exerciseData.sets, 
+        restInt: props.activeLog.exerciseData.restInt,
+        volCalc: props.activeLog.exerciseData.volCalc,
+        totReps: props.activeLog.exerciseData.totReps,
+        time: props.activeLog.exerciseData.time,
+        numRds: props.activeLog.exerciseData.numRds,
+        repsPerRd: props.activeLog.exerciseData.repsPerRd,
+        timeCap: props.activeLog.exerciseData.timeCap,
+        distance: props.activeLog.exerciseData.distance,
+        avgSpeed: props.activeLog.exerciseData.avgSpeed,
+        complete: props.activeLog.exerciseData.complete, 
+        notes: props.activeLog.notes,
     });
 
     const formRef = useRef();
@@ -33,7 +34,7 @@ export default function RftStdLogTypeForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        props.handleAddLog(formData);
+        props.handleUpdateLog(formData);
     }
 
     const handleChange = (e) => {
@@ -51,7 +52,7 @@ export default function RftStdLogTypeForm(props) {
                     <hr id="new-log"/>
                 </div>
                 <div className="form-groupR">
-                <h5 id="purp">[ LogType: {props.exerciseSelection.logType} ]</h5>
+                <h5 id="purp">[ LogType: {props.activeLog.exerciseLogType} ]</h5>
                 </div>
 
 
@@ -88,15 +89,15 @@ export default function RftStdLogTypeForm(props) {
                 </div>
 
                 <div className="form-groupL">
-                <label><strong><h5>TIME (minutes)</h5></strong></label>
+                <label><strong><h5>TIME CAP (minutes)</h5></strong></label>
                 </div>
                 <div className="form-groupR">
                     <input 
                     type="number"
                     className="html-duration-picker form-control" 
                     data-duration="00:00:00"
-                    name="time" 
-                    value={formData.time} 
+                    name="timeCap" 
+                    value={formData.timeCap} 
                     onChange={handleChange}
                     id="new-log"
                     required
@@ -128,7 +129,7 @@ export default function RftStdLogTypeForm(props) {
                 type="submit"
                 disabled={invalidForm}
                 >
-                ADD LOG
+                UPDATE LOG
             </button>
 
             </form>

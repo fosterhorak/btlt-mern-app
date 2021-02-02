@@ -4,24 +4,26 @@ import './TemplateLogTypeForm.css';
 // props needed = selectedExercise
 export default function AmrapStdLogTypeForm(props) {
 
+    //write a function to get today's date as a string... set default for dateTime
+
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        dateTime: '', 
+        dateTime: null, 
         exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
-        weight: '',
-        reps: '',
-        sets: '', 
-        restInt: '',
-        volCalc: '',
-        totReps: '',
-        time: '',
-        numRds: '',
-        repsPerRd: '',
-        timeCap: '',
-        distance: '',
-        avgSpeed: '',
+        weight: null,
+        reps: null,
+        sets: null, 
+        restInt: null,
+        volCalc: null,
+        totReps: null,
+        time: null,
+        numRds: null,
+        repsPerRd: null,
+        timeCap: null,
+        distance: null,
+        avgSpeed: null,
         complete: 'true', 
-        notes: '',
+        notes: null,
     });
 
     const formRef = useRef();

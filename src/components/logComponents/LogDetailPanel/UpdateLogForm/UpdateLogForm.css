@@ -29,13 +29,13 @@ h1.update-form {
     margin-top: 0px;
     margin-bottom: 5px;
 }
-.new-form {
+.new-form#log {
     background-color: var(--medium-background);
     width: 40vw;
     height: 90vh;
     margin: 0px 2vmin 2vmin 2vmin;
     border-radius: 2vmin;
-    border: 3px solid var(--blue);
+    border: 3px solid var(--purple);
     padding: 2vmin 4vmin;
     display:flex;
     flex-direction: column;
