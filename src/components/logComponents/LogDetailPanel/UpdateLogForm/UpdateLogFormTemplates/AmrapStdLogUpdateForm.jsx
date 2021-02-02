@@ -6,9 +6,16 @@ export default function AmrapStdLogUpdateForm(props) {
 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        _id: props.activeLog._id,
+        // copy over existing data that will not change
+        // note - userId captured in controller
+        _id: props.activeLog._id, //log._id
+        exerciseID: props.activeLog.exerciseID, //log.exerciseID
+        exerciseLogType: props.activeLog.exerciseLogType, //log.exerciseLogType
+        // key/value pairs that aren't in the exerciseData object
         dateTime: props.activeLog.dateTime, // doesn't work??
         exerciseObj: props.activeLog, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        notes: props.activeLog.notes,
+        // key/value pairs that are in the exerciseData object
         weight: props.activeLog.exerciseData.weight,
         reps: props.activeLog.exerciseData.reps,
         sets: props.activeLog.exerciseData.sets, 
@@ -22,7 +29,6 @@ export default function AmrapStdLogUpdateForm(props) {
         distance: props.activeLog.exerciseData.distance,
         avgSpeed: props.activeLog.exerciseData.avgSpeed,
         complete: props.activeLog.exerciseData.complete, 
-        notes: props.activeLog.notes,
     });
 
     const formRef = useRef();

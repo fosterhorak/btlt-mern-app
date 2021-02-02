@@ -20,7 +20,8 @@ export default function LogListPanel(props) {
                 {props.logs.map(log =>
                   <LogListCard 
                     log={log} 
-                    key={log._id} 
+                    key={log._id}
+                    logs={props.logs} 
                     exercises={props.exercises}
                     activeLog={props.activeLog} 
                     setActiveLog={props.setActiveLog}

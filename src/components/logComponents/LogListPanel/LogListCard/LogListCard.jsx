@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
 import './LogListCard.css';
-import {Link} from 'react-router-dom';
-import { PromiseProvider } from 'mongoose';
 
 
-// not desctructured: setActiveLog, setDeleteLogForm
-export default function LogListCard({ log, exercises, activeLog, setActiveLog, setDeleteLogForm}) {
+export default function LogListCard({ log, logs, exercises, activeLog, setActiveLog, setDeleteLogForm}) {
   
   // how to get target Exercise to get to exercise name and category... ???
-  // const [targetExercise, setTargetExercise] = useState((exercises.filter(e => {e._id === log.exerciseID}))[0]);
-  // const targetExercise = (exercises.filter(e => {e._id === log.exerciseID}))[0];
+  const [targetExercise, setTargetExercise] = useState({});
 
-  //function to handleClick
-    //setActiveExercise(exercise);
-    //setDeleteExerciseForm(false);
+  useEffect(() => {
+    console.log(`useEffect is running...`);
+    console.log(`exercises: ${exercises}`);
+    const target = exercises.find(e => e._id === log.exerciseID);
+    console.log(`target: ${target}`);
+    console.log(`target.name: ${target.name}`);
+
+    setTargetExercise(target);
+  }, [exercises, logs])
+
   
   async function handleClick() {
     setActiveLog(log);
@@ -24,9 +27,9 @@ export default function LogListCard({ log, exercises, activeLog, setActiveLog, s
   return (
     <>
       <div onClick={handleClick} className={log === activeLog ? "log-card selected" : "log-card"}>
-        {/* 
+        
         <h1 className="card-title" > {targetExercise.name} #{log._id.slice(-4)}</h1>
-        <h3 className="card-title" > [{targetExercise.category}] </h3> */}
+        <h3 className="card-title" > [{targetExercise.category}] </h3>
         
         {/* I want to see Exercise Name, Category, and Date for all logs */}
         <h1 className="card-title" > ExerciseName #{log._id.slice(-4)}</h1>
