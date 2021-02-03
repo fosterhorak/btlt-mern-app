@@ -1,13 +1,11 @@
 # BETTER THAN LAST TIME (BTLT) WEB APP
 BTLT allows users to keep track of their fitness metrics over time.
-Users create their own library of custom exercises and select what information they’d like to track. Users can then create logs form their existing library exercises, tracking what matters.
-
+Users can create their own library of custom exercises and select what information they’d like to track. Users track their progress over time by creating exercise logs and recording their improvments to measure progress.
 
 # Screen Shots of Application Use
 
   #### Log-in / Sign UP - Visitor Landing Page
-Google OAuth makes for easy sign in and profile set up.
-- ![landing](/screenshots/landing.png)
+![landing](/screenshots/landing.png)
 
 
   #### Exercises
