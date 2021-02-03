@@ -11,7 +11,7 @@ export default function ExerciseDetailBottom() {
 
             <div className="log-graph">
                 <br/><br/><br/><br/>
-                <h1>recent log list / graph goes here</h1>
+                <h1>coming soon...</h1>
             </div>
 
             <div className="detail-log-graph-btns">

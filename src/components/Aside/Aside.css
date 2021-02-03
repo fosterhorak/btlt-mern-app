@@ -21,6 +21,9 @@
     --dark-text:  rgb(80, 80, 80);
 }
 
+img#nav {
+    height: 25vmin;
+}
 
 .aside {
     display: flex;

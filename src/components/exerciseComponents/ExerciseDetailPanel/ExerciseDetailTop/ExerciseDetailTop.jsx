@@ -70,9 +70,7 @@ export default function ExerciseDetailTop({
                             </div>
                             </>
                             : ""}
-                            <div className="temp"><p>created by:</p><br/><p>user_id: </p></div> 
-                            <div className="temp"><p> {activeExercise.creatorEmail}</p><br/><p> {activeExercise.creator}</p></div>
-                        </div>
+                                                    </div>
                     </div>
                     <div className="update-delete-btn-container">
                         <button onClick={handleUpdateExerciseButton} id="u"className="ud-btns">UPDATE</button>

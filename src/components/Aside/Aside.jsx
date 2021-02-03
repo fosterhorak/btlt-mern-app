@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import './Aside.css';
+import logo from '../../logos/logo2.png';
 
 export default function Aside({ user, setUser }) {
     function handleLogOut() {
@@ -11,8 +12,7 @@ export default function Aside({ user, setUser }) {
     return (
         <div className="aside">
             <div className="aside-logo">
-                <h1>BTLT LOGO</h1> 
-                <small><small><span>BETTER THAN LAST TIME</span></small></small>
+                <img id="nav" src={logo} alt="btlt-logo"/>
                 <hr/>
             </div>
             <div className="aside-nav">

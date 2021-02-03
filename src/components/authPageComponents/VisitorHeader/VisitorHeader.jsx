@@ -1,18 +1,17 @@
 import './VisitorHeader.css';
-
+import logo from '../../../logos/logo1.png';
 export default function VisitorHeader() {
 
   return (
     <div>
         <h3>WELCOME TO </h3>
         <br/><br/>
-        <h1> LOGO TO GO HERE</h1>
-        <br/><br/><br/>
-        <h2>BETTER THAN LAST TIME</h2> 
-        <br/>
+        <img src={logo} alt="btlt-logo"/>
+        <br/><br/>
         <hr className='hr'/>
         <br/>
-        <h3>PLEASE <span className="auth" >LOG IN</span> OR <span>SIGN UP</span> AS A NEW USER!</h3>
+        <h5>PLEASE <span className="auth" >LOG IN</span> OR <span className="auth" >SIGN UP</span> AS A NEW USER!</h5>
+        <br/>
     </div>
   );
 }

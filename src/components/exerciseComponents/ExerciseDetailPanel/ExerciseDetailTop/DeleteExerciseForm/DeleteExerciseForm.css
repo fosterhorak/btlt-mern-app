@@ -80,7 +80,9 @@ p {
 
 }
 
-
+div.delete-card-body h3 {
+    font-size: 3vmin;
+}
 
 
 

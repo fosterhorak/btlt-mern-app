@@ -31,12 +31,14 @@ export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLog
 
         <div className="new-form" id="log">
             <h1 className="update-form">UPDATE LOG</h1> 
-            <form id="new-log-start" autoComplete="off" >
-                <div className="form-groupL">
-                    <label> <strong> <h3>{targetExercise.name} #({activeLog._id.slice(-4)})</h3></strong> </label>
+            <hr id="ul"/>
+            <form id="new-log-start2" autoComplete="off" >
+                <div className="form-groupL" id="title">
+                    <label> <strong> <h3>{targetExercise.name}</h3></strong> </label>
+                   
                 </div>
-                <div className="form-groupR">
-                    <label><strong>{targetExercise.category}</strong></label>
+                <div className="form-groupR2">
+                    #{activeLog._id.slice(-4)}                
                 </div>
             </form>
             
@@ -106,7 +108,7 @@ export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLog
             </>
             )}
 
-            <button className="cncl-form" onClick={handleCancel}> <h5>CANCEL</h5></button>
+            <button className="cncl-form2" onClick={handleCancel}> <h5>CANCEL</h5></button>
 
             </div>
         </div>

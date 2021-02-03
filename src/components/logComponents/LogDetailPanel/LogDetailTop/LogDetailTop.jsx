@@ -40,7 +40,7 @@ export default function LogDetailTop({
                         <hr id="a"/>
                         </div>
                         
-                        <div className="detail-card-body">
+                        <div className="detail-card-body" id="log">
                             <div className="form-groupL">
                                 <label> <strong>EXERCISE DATA</strong> </label>
                                 <hr id="new-log"/>
@@ -216,7 +216,7 @@ export default function LogDetailTop({
                     <div className="update-delete-btn-container">
                             <button onClick={handleUpdateLogButton} id="u"className="ud-btns">UPDATE</button>
                             <button onClick={handleDeleteLogButton} id="d"className="ud-btns">DELETE</button>
-                        </div>
+                    </div>
                     </div>
                 </>
                 }

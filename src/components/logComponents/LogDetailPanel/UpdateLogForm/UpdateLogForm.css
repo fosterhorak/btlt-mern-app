@@ -41,7 +41,14 @@ h1.update-form {
     flex-direction: column;
 }
 
-
+form#new-log-start2 {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 1.25vmin;
+    color: var(--light-text);
+    margin: 3px;
+    padding: 3px;  
+}
 
 form.update-form {
     display: grid;
@@ -54,11 +61,19 @@ form.update-form {
 
 }
 
-.form-groupL {
-
+hr#ul {
+    width: 95%;
+    border: 1px solid var(--light-background);
 }
-.form-groupR {
-    color: var(--blue);
+
+.form-groupL label strong h3{
+    font-size: 4vmin;
+}
+.form-groupR2 {
+    color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button.update-exercise-btn {

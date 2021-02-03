@@ -21,9 +21,10 @@
     --dark-text:  rgb(80, 80, 80);
 }
 
-h1, h3, h2 {
+h1, h3, h2, h5 {
     color: var(--medium-text);
     word-spacing: .15em;
+    font-size: 1vmin;
     
 }
 
@@ -34,5 +35,8 @@ hr.hr {
 
 span.auth {
     font-size: 1.3em;
-    text-decoration: underline;
+}
+
+img {
+    height: 50vmin;
 }

@@ -156,7 +156,8 @@ textarea#new-log:focus {
 }
 
 button#new-log {
-    width: 80%;
+    width: 90%;
+    margin-bottom: 10px;
 }
 
 h5#purp {
@@ -167,4 +168,8 @@ label#calc {
     display: flex;
     justify-content: center;
     align-content: middle;
+}
+
+buttton.cncl-form2 {
+    width: 7%;
 }
