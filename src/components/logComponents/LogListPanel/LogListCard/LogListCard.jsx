@@ -22,8 +22,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
   return (
     <>
       <div onClick={handleClick} className={log === activeLog ? "log-card selected" : "log-card"}>
-        
- 
+      
         
         {/* I want to see Exercise Name, Category, and Date for all logs */}
         <h3 className="card-title" id="name"> {targetExercise.name} <span id="logid">#{log._id.slice(-4)}</span> </h3>
