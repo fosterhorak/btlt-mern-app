@@ -1,4 +1,4 @@
-# BETTER THAN LAST TIME (BTLT) WEB APP
+# BETTER THAN LAST TIME (BTLT)
 BTLT allows users to keep track of their fitness metrics over time.
 Users can create their own library of custom exercises and select what information they’d like to track. Users track their progress over time by creating exercise logs and recording their improvments to measure progress.
 
