@@ -31,8 +31,8 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
  
         
         {/* I want to see Exercise Name, Category, and Date for all logs */}
-        <h3 className="card-title" > {targetExercise.name} #{log._id.slice(-4)}</h3>
-        <h1 className="card-title" > [{targetExercise.category}] </h1>
+        <h3 className="card-title" id="name"> {targetExercise.name} <span id="logid">#{log._id.slice(-4)}</span> </h3>
+        <h1 className="card-title" id="cat"> [{targetExercise.category}] </h1>
         <h3 className="b"id="p">{moment(log.dateTime).format('dddd, MMMM Do YYYY, h:mm a')}</h3>
 
         <div className="log-metrics">

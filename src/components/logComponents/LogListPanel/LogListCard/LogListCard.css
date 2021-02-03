@@ -48,9 +48,15 @@ h1 {
     margin-bottom: 0px;
     font-size: 2vh;
 }
-h1.card-title {
-    font-size: 3vmin;
+h1.card-title#cat {
+    font-size: 1vmin;
 }
+
+h3.card-title#name {
+    font-size: 2vmin;
+}
+
+
 
 .b#p{
     color: var(--purple);

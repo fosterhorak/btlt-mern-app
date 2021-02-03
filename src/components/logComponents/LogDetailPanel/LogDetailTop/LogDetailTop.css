@@ -41,7 +41,13 @@ hr#a {
 hr#b {
     width: 100%;
     border: 1px solid var(--medium-background);
+    
 }
+hr#new-log {
+    margin-left: 3vmin;
+
+}
+
 
 
 
@@ -63,20 +69,43 @@ p {
 
 
 }
+div.detail-car-body#log {
+    margin-bottom: 10px;
+}
 
 .detail-card-header h1{
     color: var(--light-text);
     font-size: 4vh;
 }
 
-.detail-card-body {
+.detail-card-body#log {
     display: grid;
     grid-template-columns: 2fr 3fr;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
     height: 28vh;
+    margin: 6px 3px ;
 
+}
+.form-groupL label {
+    font-size: 2.7vmin;
+    margin-left: 4vmin;
+}
+
+.form-groupL label h3{
+    font-size: 2.5vmin;
+    margin-left: 5vmin;
+    align-self: right;
+}
+
+
+.form-groupR label h3{
+    font-size: 2.5vmin;
+    margin-left: 5vmin;
+    padding: 4px;
+    color: var(--purple);
+    align-items: left;
 }
 
 .detail-card-body .columnR h3, h4 {

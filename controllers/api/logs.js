@@ -25,7 +25,8 @@ async function create(req, res) {
     req.body.userId = req.user._id;
     req.body.exerciseID = req.body.exerciseObj._id;//whatever the id is of the exerciseObj
     req.body.exerciseLogType = req.body.exerciseObj.logType;//whatever the logtype is of exerciseObj
-    //req.body.dateTime and req.body.notes should already be good...
+    //req.body.notes should already be good...
+    req.body.dateTime = req.body.dateTime.toString(); //converting dateTime to string
     req.body.exerciseData = {
         weight: req.body.weight,
         reps: req.body.reps,
@@ -58,7 +59,8 @@ async function create(req, res) {
 async function update(req, res) {
     req.body.userId = req.body.exerciseObj.userId; //whatever the userId is of the active exercise - exerciseObj
     //req.body._id, req.body.exerciseID, and req.body.exerciseLogType set on update form...
-    //req.body.dateTime, req.body.notes, and req.body.exerciseData set in form...
+    //req.body.notes, and req.body.exerciseData set in form...
+    req.body.dateTime = req.body.dateTime.toString(); //converting dateTime to string
     req.body.exerciseData = {
         weight: req.body.weight ? req.body.weight : null,
         reps: req.body.reps ? req.body.reps : null,

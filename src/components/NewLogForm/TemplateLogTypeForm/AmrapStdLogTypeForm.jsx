@@ -8,7 +8,7 @@ export default function AmrapStdLogTypeForm(props) {
     //const dateToday = 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        dateTime: new Date(Date.now()).toISOString().slice(0,16),
+        dateTime: new Date().toISOString().slice(0,16),
         exerciseObj: props.exerciseSelection, // copy over exercise object
         weight: null,
         reps: null,
