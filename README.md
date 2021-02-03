@@ -39,7 +39,7 @@ This application was made using the following technologies:
 
 
 # Getting Started
-- [Follow This Link](https://btlt-web-app.herokuapp.com/logs) to Use the App!
+- [Follow This Link](https://btlt-mern-app.herokuapp.com/) to Use the App!
 - [Link](https://trello.com/b/OhuulGZp/ga-unit-4-project) to Trello Board (used for Development)
 
 
