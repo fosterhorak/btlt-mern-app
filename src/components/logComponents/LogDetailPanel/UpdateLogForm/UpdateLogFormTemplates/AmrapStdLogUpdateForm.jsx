@@ -3,7 +3,8 @@ import './TemplateLogUpdateForm.css';
 
 // props needed = selectedExercise
 export default function AmrapStdLogUpdateForm(props) {
-
+    
+    console.log(props.activeLog.dateTime);
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
         // copy over existing data that will not change
@@ -12,7 +13,7 @@ export default function AmrapStdLogUpdateForm(props) {
         exerciseID: props.activeLog.exerciseID, //log.exerciseID
         exerciseLogType: props.activeLog.exerciseLogType, //log.exerciseLogType
         // key/value pairs that aren't in the exerciseData object
-        dateTime: props.activeLog.dateTime, // doesn't work??
+        dateTime: props.activeLog.dateTime.slice(0, 16), 
         exerciseObj: props.activeLog, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
         notes: props.activeLog.notes,
         // key/value pairs that are in the exerciseData object

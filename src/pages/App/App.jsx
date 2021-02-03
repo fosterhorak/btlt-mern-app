@@ -79,20 +79,20 @@ export default function App() {
 
   async function handleDeleteExercise(exercise) {
     console.log('handleDeleteExercise is running...')
+    //set constanct to hold exercise id
     const exerciseID = exercise._id;
     console.log(`exerciseID: ${exerciseID}`)
 
     // create a list of logs to delete (avoid orphan logs)
-    // for each item in logsToDelete, i want to delete it..
     const logsToDelete = logs.filter(log => log.exerciseID === exerciseID);
     
     console.log(`logsToDelete: ${logsToDelete}`)
-
+    // for each item in logsToDelete, i want to delete it (use deleteOne from logAPI)
     logsToDelete.forEach( async function(log) {
       await logAPI.deleteOne(log);
     });
     
-    // set new logs state
+    // set new logs state (filter out deleted logs)
     console.log(`logs before filter: ${logs}`)
     setLogs(logs.filter(log => log.exerciseID !== exerciseID));
     console.log(`logs after filter: ${logs}`)
@@ -103,7 +103,7 @@ export default function App() {
     //and set new exercises state
     setExercises(exercises.filter(exercise => exercise._id !== exerciseID));
 
-    //reset states for activeExercise, activeLog, DeleteExerciseForm, and DeleteLogForm
+    //reset states for activeExercise, activeLog, DeleteExerciseForm, and DeleteLogForm...
     setActiveExercise({});
     setActiveLog({});
     setDeleteExerciseForm(false);

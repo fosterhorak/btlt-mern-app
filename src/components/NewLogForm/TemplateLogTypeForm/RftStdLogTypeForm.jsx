@@ -6,8 +6,8 @@ export default function RftStdLogTypeForm(props) {
 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        dateTime: null, 
-        exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        dateTime: new Date(Date.now()).toISOString().slice(0,16),
+        exerciseObj: props.exerciseSelection, // copy over exercise object
         weight: null,
         reps: null,
         sets: null, 

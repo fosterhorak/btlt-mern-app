@@ -17,7 +17,7 @@ import SimpleLogUpdateForm from './UpdateLogFormTemplates/SimpleLogUpdateForm';
 
 export default function UpdateLogForm({ activeLog, handleUpdateLog, setUpdateLogForm, targetExercise  }) {
     // const location = useLocation();
-    
+
     // hook updateExerciseFrom to false...
     const handleCancel = (e) => {
         e.preventDefault()

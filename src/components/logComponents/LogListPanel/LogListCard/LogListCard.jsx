@@ -32,7 +32,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
         {/* I want to see Exercise Name, Category, and Date for all logs */}
         <h3 className="card-title" > {targetExercise.name} #{log._id.slice(-4)}</h3>
         <h1 className="card-title" > [{targetExercise.category}] </h1>
-        <h3 className="b"id="p">DATE: {log.dateTime}</h3>
+        <h3 className="b"id="p">{log.dateTime}</h3>
 
         <div className="log-metrics">
         {/* if log.logType is Std Lift, EMOM(wtd), or AMRAP(wtd) --> i want to see weight, volume */}
@@ -77,14 +77,14 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
           { log.exerciseLogType === ('Cardio') && (
             <>
               <h3 className="b"id="p">DIST: {log.exerciseData.distance}</h3>
-              <h3 className="b"id="p">AVG SPD: {`${log.exerciseData.avgSpeed.toFixed(2)} (d)/min`}</h3>
+              <h3 className="b"id="p">PACE: {`${log.exerciseData.avgSpeed.toFixed(2)}/min -- ${(log.exerciseData.avgSpeed*60).toFixed(2)}/hr`}</h3>
             </>
           )}
 
         {/* if log.logType is Simple --> i want to see "complete" */}
           { log.exerciseLogType === ('Simple') && (
             <>
-              <h3 className="b" id="p" >{ log.exerciseData.complete==='true' ? 'COMPLETED' : "DID NOT COMPLETE"}</h3>
+              <h3 className="b" id="p" >{ log.exerciseData.complete==='true' ? 'COMPLETED' : "NOT COMPLETED"}</h3>
             </>
           )}  
         </div>        

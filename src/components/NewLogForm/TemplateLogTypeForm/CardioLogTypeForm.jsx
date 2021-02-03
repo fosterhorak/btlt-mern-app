@@ -6,8 +6,8 @@ export default function CardioLogTypeForm(props) {
 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({
-        dateTime: null, 
-        exerciseObj: props.exerciseSelection, // the form will initially need the whole exercise object (to use the logType), when creating a new "log" I will only want to save the exercise._id
+        dateTime: new Date(Date.now()).toISOString().slice(0,16),
+        exerciseObj: props.exerciseSelection, // copy over exercise object
         weight: null,
         reps: null,
         sets: null, 
@@ -101,10 +101,10 @@ export default function CardioLogTypeForm(props) {
                 <div className="form-groupR">
                     <input 
                     type="number"
-                    className="html-duration-picker form-control" 
-                    data-duration="00:00:00"
+                    step="1"
+                    className="form-control" 
                     name="time" 
-                    value={formData.time} 
+                    value={parseInt(formData.time)} 
                     onChange={handleChange}
                     id="new-log"
                     required
@@ -113,12 +113,12 @@ export default function CardioLogTypeForm(props) {
 
 
                 <div className="form-groupL">
-                <label><strong><h5>CALCULATED AVG. SPEED</h5></strong></label>
+                <label><strong><h5>CALCULATED PACE</h5></strong></label>
                 </div>
                 <div className="form-groupR"
                 // will need to set calculate these as hooks or in useEffect functions above...
                 >
-                <label id="calc"><strong><h5 id="purp">{formData.avgSpeed ? `${formData.avgSpeed.toFixed(2)} (d)/min -- OR -- ${(formData.avgSpeed*60).toFixed(2)} (d)/hr` : "Enter DISTANCE & TIME to calculate..."}</h5></strong></label>
+                <label id="calc"><strong><h5 id="purp">{formData.avgSpeed ? `${formData.avgSpeed.toFixed(2)} /min -- ${(formData.avgSpeed*60).toFixed(2)} /hr` : "Enter DISTANCE & TIME to calculate..."}</h5></strong></label>
                 </div>
 
 
