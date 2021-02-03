@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './LogListCard.css';
+import moment from 'moment';
 
 
 export default function LogListCard({ log, logs, exercises, activeLog, setActiveLog, setDeleteLogForm}) {
@@ -14,7 +15,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
     console.log(`target.name: ${target.name}`);
 
     setTargetExercise(target);
-  }, [exercises, logs])
+  }, [exercises, logs, log])
 
   
   async function handleClick() {
@@ -32,11 +33,13 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
         {/* I want to see Exercise Name, Category, and Date for all logs */}
         <h3 className="card-title" > {targetExercise.name} #{log._id.slice(-4)}</h3>
         <h1 className="card-title" > [{targetExercise.category}] </h1>
-        <h3 className="b"id="p">{log.dateTime}</h3>
+        <h3 className="b"id="p">{moment(log.dateTime).format('dddd, MMMM Do YYYY, h:mm a')}</h3>
 
         <div className="log-metrics">
+        <h3 className="b"id="p">[{log.exerciseLogType}]</h3>
+
         {/* if log.logType is Std Lift, EMOM(wtd), or AMRAP(wtd) --> i want to see weight, volume */}
-          { log.exerciseLogType === ('Std Lft' || 'EMOM(wtd)' || 'AMRAP(wtd)') && (
+          { (log.exerciseLogType === 'Std Lft' || log.exerciseLogType === 'EMOM(wtd)' || log.exerciseLogType === 'AMRAP(wtd)') && (
             <>
               <h3 className="b"id="p">WT: {log.exerciseData.weight}</h3>
               <h3 className="b"id="p">VOL: {log.exerciseData.volCalc}</h3>
@@ -44,28 +47,28 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
           )}
 
         {/* if log.logType is Body Wt or EMOM(std) --> i want to see total reps */}
-          { log.exerciseLogType === ('Body Wt' || 'EMOM(std)') && (
+          { (log.exerciseLogType === 'Body Wt' || log.exerciseLogType === 'EMOM(std)') && (
             <>
-              <h3 className="b"id="p">TOTAL REPS: {log.exerciseData.totReps}</h3>
+              <h3 className="b"id="p">REPS: {log.exerciseData.totReps}</h3>
             </>
           )}
 
         {/* if log.logType is AMRAP(std) --> i want to see reps */}
-          { log.exerciseLogType === ('AMRAP(std)') && (
+          { (log.exerciseLogType === 'AMRAP(std)') && (
             <>
               <h3 className="b"id="p">REPS: {log.exerciseData.reps}</h3>
             </>
           )}
 
         {/* if log.logType is RepsForTime(std) --> i want to see time */}
-          { log.exerciseLogType === ('RepsForTime(std)') && (
+          { (log.exerciseLogType === 'RepsForTime(std)') && (
             <>
               <h3 className="b"id="p">TIME: {log.exerciseData.time}</h3>
             </>
           )}
 
         {/* if log.logType is RepsForTime(wtd) --> i want to see weight, volume, time */}
-          { log.exerciseLogType === ('RepsForTime(wtd)') && (
+          { (log.exerciseLogType === 'RepsForTime(wtd)') && (
             <>
               <h3 className="b"id="p">WT: {log.exerciseData.weight}</h3>
               <h3 className="b"id="p">VOL: {log.exerciseData.volCalc}</h3>
@@ -74,7 +77,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
           )}
 
         {/* if log.logType is Cardio --> i want to see distance, avgSpeed */}
-          { log.exerciseLogType === ('Cardio') && (
+          { (log.exerciseLogType === 'Cardio') && (
             <>
               <h3 className="b"id="p">DIST: {log.exerciseData.distance}</h3>
               <h3 className="b"id="p">PACE: {`${log.exerciseData.avgSpeed.toFixed(2)}/min -- ${(log.exerciseData.avgSpeed*60).toFixed(2)}/hr`}</h3>
@@ -82,7 +85,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
           )}
 
         {/* if log.logType is Simple --> i want to see "complete" */}
-          { log.exerciseLogType === ('Simple') && (
+          { (log.exerciseLogType === 'Simple') && (
             <>
               <h3 className="b" id="p" >{ log.exerciseData.complete==='true' ? 'COMPLETED' : "NOT COMPLETED"}</h3>
             </>
