@@ -10,20 +10,20 @@ export default function AmrapStdLogTypeForm(props) {
     const [formData, setFormData] = useState({
         dateTime: new Date().toISOString().slice(0,16),
         exerciseObj: props.exerciseSelection, // copy over exercise object
-        weight: null,
-        reps: null,
-        sets: null, 
-        restInt: null,
-        volCalc: null,
-        totReps: null,
-        time: null,
-        numRds: null,
-        repsPerRd: null,
-        timeCap: null,
-        distance: null,
-        avgSpeed: null,
+        weight: '',
+        reps: '',
+        sets: '', 
+        restInt: '',
+        volCalc: '',
+        totReps: '',
+        time: '',
+        numRds: '',
+        repsPerRd: '',
+        timeCap: '',
+        distance: '',
+        avgSpeed: '',
         complete: 'true', 
-        notes: null,
+        notes: '',
     });
 
     const formRef = useRef();
