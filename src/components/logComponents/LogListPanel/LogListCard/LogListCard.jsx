@@ -8,12 +8,7 @@ export default function LogListCard({ log, logs, exercises, activeLog, setActive
   const [targetExercise, setTargetExercise] = useState({});
 
   useEffect(() => {
-    console.log(`useEffect is running...`);
-    console.log(`exercises: ${exercises}`);
     const target = exercises.find(e => e._id === log.exerciseID);
-    console.log(`target: ${target}`);
-    console.log(`target.name: ${target.name}`);
-
     setTargetExercise(target);
   }, [exercises, logs, log])
 
