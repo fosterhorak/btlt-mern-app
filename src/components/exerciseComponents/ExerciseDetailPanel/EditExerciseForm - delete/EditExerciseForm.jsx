@@ -42,10 +42,6 @@ export default function EditExerciseForm({ activeExercise, handleUpdateExercise,
         Popup.open=false;
     }
 
-    // ice box: allow update of all form components if no logs have been created yet... otherwise only allow select properties to be updated
-    // ice box: allow for users to create a new exercise by copying an existing one... opens new exercise form with copied content already 
-    // reminder -- if i update a property of an exercise that is pulled into a log... I'll want to make sure it get's updated on the log instance as well 
-            // or perhaps, just avoid doing this.. only reference the exercise._id in the log model
     return (
         <div className="new-form">
             <h1 className="update-form">Update Exercise</h1> 

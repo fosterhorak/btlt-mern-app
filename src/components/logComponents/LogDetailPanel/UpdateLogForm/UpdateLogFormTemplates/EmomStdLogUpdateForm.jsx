@@ -136,9 +136,7 @@ export default function EmomStdLogUpdateForm(props) {
                 <div className="form-groupL">
                 <label><strong><h5>CALCULATED TOTAL REPS</h5></strong></label>
                 </div>
-                <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
-                >
+                <div className="form-groupR">
                 <label id="calc"><strong><h5 id="purp">{formData.totReps ? formData.totReps : "Enter REPS PER ROUND & NUMBER OF ROUNDS to calculate..."}</h5></strong></label>
                 </div>
 

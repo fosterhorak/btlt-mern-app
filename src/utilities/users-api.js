@@ -16,7 +16,7 @@ export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
 
-// /*--- Helper Functions ---*/
+// /*--- Helper Functions ---*/    (below moved to its own module (send-request.js))
 
 // async function sendRequest(url, method = 'GET', payload = null) {
 //   // Fetch takes an optional options object as the 2nd argument

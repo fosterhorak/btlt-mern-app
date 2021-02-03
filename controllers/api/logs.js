@@ -3,7 +3,6 @@ const Log = require('../../models/log');
 module.exports = {
     index,
     create,
-    // show,
     update,
     delete: deleteOne
 };
@@ -16,12 +15,6 @@ async function index(req, res) {
 
 
 async function create(req, res) {
-    console.log(`req.body.exerciseID (before): ${req.body.exerciseID}`)
-    console.log(`req.body.exerciseLogType (before): ${req.body.exerciseLogType}`)
-    console.log(`req.body.exerciseObj._id (before): ${req.body.exerciseObj._id}`)
-    console.log(`req.body.exerciseObj.logType (before): ${req.body.exerciseObj.logType}`)
-
-
     req.body.userId = req.user._id;
     req.body.exerciseID = req.body.exerciseObj._id;//whatever the id is of the exerciseObj
     req.body.exerciseLogType = req.body.exerciseObj.logType;//whatever the logtype is of exerciseObj
@@ -42,19 +35,10 @@ async function create(req, res) {
         avgSpeed: req.body.avgSpeed,
         complete: req.body.complete,
     };
-    req.body.exerciseObj = null;
-    console.log(`req.body.exerciseID (after): ${req.body.exerciseID}`)
-    console.log(`req.body.exerciseLogType (after): ${req.body.exerciseLogType}`)
-    // need to clear out exerciseObj (will look up exercise info by searching by ID on log index page)
+    req.body.exerciseObj = null; 
     const log = await Log.create(req.body);
-    console.log(`new log: ${log}`)
     res.status(201).json(log);
 }
-
-// async function show(req, res) {
-//     const log = await Log.findById(req.params.id);
-//     res.status(200).json(log);
-// }
 
 async function update(req, res) {
     req.body.userId = req.body.exerciseObj.userId; //whatever the userId is of the active exercise - exerciseObj
@@ -76,8 +60,6 @@ async function update(req, res) {
         avgSpeed: req.body.avgSpeed ? req.body.avgSpeed : null,
         complete: req.body.complete ? req.body.complete : null,
     };
-    console.log(`req.params.id: ${req.params.id}`)
-    console.log(`req.body._id: ${req.body._id}`)
     
     req.body.exerciseObj = null;
     

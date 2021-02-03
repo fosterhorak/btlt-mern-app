@@ -8,20 +8,20 @@ export default function TemplateLogTypeForm(props) {
     const [formData, setFormData] = useState({
         dateTime: new Date(Date.now()).toISOString().slice(0,16),
         exerciseObj: props.exerciseSelection, // copy over exercise object
-        weight: null,
-        reps: null,
-        sets: null, 
-        restInt: null,
-        volCalc: null,
-        totReps: null,
-        time: null,
-        numRds: null,
-        repsPerRd: null,
-        timeCap: null,
-        distance: null,
-        avgSpeed: null,
+        weight: '',
+        reps: '',
+        sets: '', 
+        restInt: '',
+        volCalc: '',
+        totReps: '',
+        time: '',
+        numRds: '',
+        repsPerRd: '',
+        timeCap: '',
+        distance: '',
+        avgSpeed: '',
         complete: 'true', 
-        notes: null,
+        notes: '',
     });
 
     const formRef = useRef();
@@ -237,7 +237,6 @@ export default function TemplateLogTypeForm(props) {
                 <label><strong><h5>CALCULATED AVG. SPEED</h5></strong></label>
                 </div>
                 <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
                 >
                 <label id="calc"><strong><h5 id="purp">AVG SPEED</h5></strong></label>
                 </div>
@@ -246,7 +245,6 @@ export default function TemplateLogTypeForm(props) {
                 <label><strong><h5>CALCULATED TOTAL REPS</h5></strong></label>
                 </div>
                 <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
                 >
                 <label id="calc"><strong><h5 id="purp">TOTAL REPS</h5></strong></label>
                 </div>
@@ -255,7 +253,6 @@ export default function TemplateLogTypeForm(props) {
                 <label><strong><h5>CALCULATED VOLUME</h5></strong></label>
                 </div>
                 <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
                 >
                 <label id="calc"><strong><h5 id="purp">VOLUME</h5></strong></label>
                 </div>

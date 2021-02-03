@@ -20,10 +20,6 @@ export default function LogDetailTop({
         setDeleteLogForm(true);
     }
 
-    
-
-
-
     return (
         <>
             <div className="top-half">

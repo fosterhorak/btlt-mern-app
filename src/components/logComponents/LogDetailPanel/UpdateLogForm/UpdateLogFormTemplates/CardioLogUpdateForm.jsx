@@ -125,9 +125,7 @@ export default function CardioLogUpdateForm(props) {
                 <div className="form-groupL">
                 <label><strong><h5>CALCULATED PACE</h5></strong></label>
                 </div>
-                <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
-                >
+                <div className="form-groupR">
                 <label id="calc"><strong><h5 id="purp">{formData.avgSpeed ? `${formData.avgSpeed.toFixed(2)} /min -- ${(formData.avgSpeed*60).toFixed(2)} /hr` : "Enter DISTANCE & TIME to calculate..."}</h5></strong></label>
                 </div>
 

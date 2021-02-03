@@ -4,7 +4,6 @@ import './TemplateLogTypeForm.css';
 // props needed = selectedExercise
 export default function AmrapStdLogTypeForm(props) {
 
-    //write a function to get today's date as a string... set default for dateTime
     //const dateToday = 
     const [invalidForm, setInvalidForm] = useState(true);
     const [formData, setFormData] = useState({

@@ -12,9 +12,6 @@ export default function ExerciseDetailPanel({
 
 }) {
 
-
-    // If the UpdateExerciseForm is up, and I click on a new exercise, I want to see the UpdateExerciseForm for the new active exercise...
-
     return (
       <>
         { activeExercise.name ? 
@@ -40,9 +37,7 @@ export default function ExerciseDetailPanel({
               </>
             }
           </div>
- 
           
-
         : ''}
       </>
     );

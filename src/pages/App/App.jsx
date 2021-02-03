@@ -8,14 +8,10 @@ import LogListPanel from '../../components/logComponents/LogListPanel/LogListPan
 import LogDetailPanel from '../../components/logComponents/LogDetailPanel/LogDetailPanel';
 import ExerciseListPanel from '../../components/exerciseComponents/ExerciseListPanel/ExerciseListPanel';
 import ExerciseDetailPanel from '../../components/exerciseComponents/ExerciseDetailPanel/ExerciseDetailPanel';
-
 import NewLogForm from '../../components/NewLogForm/NewLogForm';
-// import NewLogTestForm from '../../components/NewLogTestForm/NewLogTestForm';
 import NewExerciseForm from '../../components/NewExerciseForm/NewExerciseForm';
-
 import * as exerciseAPI from '../../utilities/exercises-api';
 import * as logAPI from '../../utilities/logs-api';
-// import UpdateExerciseForm from '../../components/exerciseComponents/ExerciseDetailPanel/UpdateExerciseForm/UpdateExerciseForm';
 
 
 
@@ -39,10 +35,6 @@ export default function App() {
 
   const history = useHistory();
 
-  // useEffect(() => {
-  //   history.push("/")
-  // }, [exercises, history])
-
   // ----------- FUNCTIONS FOR EXERCISES --------------------
   useEffect(() => {
     async function getExercises(){
@@ -64,10 +56,6 @@ export default function App() {
   }
 
   async function handleUpdateExercise(updatedExerciseData) {
-    console.log(`activeExercise.name is... : ${activeExercise}`);
-    console.log(`setUpdateExerciseForm is set to... : ${updateExerciseForm}`);
-    console.log(`updateExerciseData.name is : ${updatedExerciseData}`);
-
     const updatedExercise = await exerciseAPI.update(updatedExerciseData);
     const newExerciseArray = exercises.map(exercise =>
       exercise._id === updatedExercise._id ? updatedExercise : exercise
@@ -78,24 +66,19 @@ export default function App() {
   }
 
   async function handleDeleteExercise(exercise) {
-    console.log('handleDeleteExercise is running...')
-    //set constanct to hold exercise id
+    //set constant to hold exercise id
     const exerciseID = exercise._id;
-    console.log(`exerciseID: ${exerciseID}`)
 
     // create a list of logs to delete (avoid orphan logs)
     const logsToDelete = logs.filter(log => log.exerciseID === exerciseID);
     
-    console.log(`logsToDelete: ${logsToDelete}`)
     // for each item in logsToDelete, i want to delete it (use deleteOne from logAPI)
     logsToDelete.forEach( async function(log) {
       await logAPI.deleteOne(log);
     });
     
     // set new logs state (filter out deleted logs)
-    console.log(`logs before filter: ${logs}`)
     setLogs(logs.filter(log => log.exerciseID !== exerciseID));
-    console.log(`logs after filter: ${logs}`)
 
 
     //then delete the exercise
@@ -150,18 +133,6 @@ export default function App() {
     setDeleteLogForm(false);
     history.push('/logs');
   }
-
-  //delete many logs (when i delete an exercise)
-  //pass in a list of logs to delete... (list of objects? or log_ids?)
-  // async function handleDeleteManyLogs(logsToDelete) {
-  //   const logID = log._id;
-  //   await logAPI.deleteOne(log);
-  //   setLogs(logs.filter(log => log._id !== logID));
-  //   setActiveLog({});
-  //   setDeleteLogForm(false);
-  //   history.push('/logs');
-  // }
-
 
 
   return (

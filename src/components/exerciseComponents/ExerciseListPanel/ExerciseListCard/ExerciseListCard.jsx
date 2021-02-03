@@ -4,10 +4,6 @@ import {Link} from 'react-router-dom';
 
 
 export default function ExerciseListCard({ exercise, activeExercise, setActiveExercise, setDeleteExerciseForm}) {
-  
-  //function to handleClick
-    //setActiveExercise(exercise);
-    //setDeleteExerciseForm(false);
     
   async function handleClick() {
     setActiveExercise(exercise);

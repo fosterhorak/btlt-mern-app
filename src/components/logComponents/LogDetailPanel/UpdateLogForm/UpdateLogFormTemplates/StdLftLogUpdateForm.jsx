@@ -152,9 +152,7 @@ export default function StdLftLogUpdateForm(props) {
                 <div className="form-groupL">
                 <label><strong><h5>CALCULATED VOLUME</h5></strong></label>
                 </div>
-                <div className="form-groupR"
-                // will need to set calculate these as hooks or in useEffect functions above...
-                >
+                <div className="form-groupR">
                 <label id="calc"><strong><h5 id="purp">{formData.volCalc ? formData.volCalc : "Enter WEIGHT, REPS, & SETS to calculate..."}</h5></strong></label>
                 </div>
             

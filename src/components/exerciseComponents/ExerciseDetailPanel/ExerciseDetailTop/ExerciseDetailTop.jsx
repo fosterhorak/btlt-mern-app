@@ -9,7 +9,6 @@ export default function ExerciseDetailTop({
     deleteExerciseForm, setDeleteExerciseForm,
 }) {
 
-
     async function handleUpdateExerciseButton() {
         setUpdateExerciseForm(true);
     }
@@ -17,10 +16,6 @@ export default function ExerciseDetailTop({
     async function handleDeleteExerciseButton() {
         setDeleteExerciseForm(true);
     }
-
-    
-
-
 
     return (
         <>
@@ -70,7 +65,7 @@ export default function ExerciseDetailTop({
                             </div>
                             </>
                             : ""}
-                                                    </div>
+                        </div>
                     </div>
                     <div className="update-delete-btn-container">
                         <button onClick={handleUpdateExerciseButton} id="u"className="ud-btns">UPDATE</button>

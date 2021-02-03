@@ -6,7 +6,7 @@ const logSchema = new Schema({
     exerciseID: {type: Schema.Types.ObjectId, ref: 'Exercise'}, //pull from exercise model
     exerciseLogType: {type: String}, //pull from exercise model
     dateTime: {type: Date}, //user will input
-    exerciseData: {type: Object}, //will be determined by form based on exerciselogType
+    exerciseData: {type: Object}, //will be determined by form based on exerciselogType (assign in controller)
     notes: {type: String}, //user will input
 }, {
     timestamps: true,

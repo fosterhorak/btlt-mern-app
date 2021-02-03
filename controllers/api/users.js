@@ -9,14 +9,12 @@ module.exports = {
 };
 
 function checkToken(req, res) {
-  // req.user puts a smile on your face
   console.log('req.user', req.user);
   res.json(req.exp);
 }
 
 async function create(req, res) {
   try {
-    // Add the user to the db
     const user = await User.create(req.body);
     const token = createJWT(user);
     res.json(token);
